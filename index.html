@@ -399,14 +399,11 @@
             mobileMenu.classList.add('hidden');
         }
 
-        var TG_TOKEN = '8210770601:AAH3wnQVisvIZXRsN8gVTqLDM7WVfkjYnHk';
-        var TG_CHAT  = '6041511152';
-
         function sendTelegram(msg) {
-            fetch('https://api.telegram.org/bot' + TG_TOKEN + '/sendMessage', {
+            fetch('https://eondmuomddg4wq0.m.pipedream.net', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ chat_id: TG_CHAT, text: msg, parse_mode: 'HTML' })
+                body: JSON.stringify({ message: msg })
             });
         }
 
