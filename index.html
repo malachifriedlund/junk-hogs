@@ -7,7 +7,6 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'AW-18108308539');
     </script>
     <meta charset="UTF-8">
@@ -20,444 +19,303 @@
 <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
 
 <!-- Navigation -->
-    <nav class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 sticky top-0 z-40 shadow-sm">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-            <div class="flex items-center gap-2">
-                <img src="logo.png" alt="Junk Hogs Logo" style="height:70px;width:auto;" />
+<nav class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 sticky top-0 z-40 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+            <a href="index.html"><img src="logo.png" alt="Junk Hogs Logo" style="height:70px;width:auto;" /></a>
+        </div>
+        <div class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600 dark:text-gray-300">
+            <a href="index.html" class="text-brand-500 font-semibold transition-colors">Home</a>
+            <a href="services.html" class="hover:text-brand-500 transition-colors">Services</a>
+            <a href="our-story.html" class="hover:text-brand-500 transition-colors">Our Story</a>
+            <a href="service-area.html" class="hover:text-brand-500 transition-colors">Service Area</a>
+            <a href="contact.html" class="hover:text-brand-500 transition-colors">Contact</a>
+        </div>
+        <a href="contact.html" class="hidden md:inline-block bg-brand-500 hover:bg-brand-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors shadow-sm">
+            Get Free Quote
+        </a>
+        <button id="menuBtn" class="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden border-t border-gray-200 bg-white px-4 py-4 space-y-3">
+        <a href="index.html"        onclick="closeMobileMenu()" class="block text-sm font-medium text-gray-700 hover:text-brand-500 py-1">Home</a>
+        <a href="services.html"     onclick="closeMobileMenu()" class="block text-sm font-medium text-gray-700 hover:text-brand-500 py-1">Services</a>
+        <a href="our-story.html"    onclick="closeMobileMenu()" class="block text-sm font-medium text-gray-700 hover:text-brand-500 py-1">Our Story</a>
+        <a href="service-area.html" onclick="closeMobileMenu()" class="block text-sm font-medium text-gray-700 hover:text-brand-500 py-1">Service Area</a>
+        <a href="contact.html"      onclick="closeMobileMenu()" class="block text-sm font-medium text-gray-700 hover:text-brand-500 py-1">Contact</a>
+        <a href="contact.html"      onclick="closeMobileMenu()" class="block w-full text-center bg-brand-500 hover:bg-brand-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors">Get Free Quote</a>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="relative text-white py-20 px-4 overflow-hidden">
+    <div class="absolute inset-0">
+        <img src="junk-photo-2.jpeg" alt="" class="w-full h-full object-cover" />
+    </div>
+    <div class="absolute inset-0 bg-brand-900 bg-opacity-80"></div>
+    <div class="relative max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <div>
+            <div class="inline-flex items-center gap-2 bg-brand-600 bg-opacity-60 text-brand-200 px-3 py-1 rounded-full text-sm font-medium mb-6">
+                <i data-lucide="map-pin" class="w-4 h-4"></i>
+                Proudly Serving Ann Arbor & Washtenaw County
             </div>
-            <div class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600 dark:text-gray-300">
-                <a href="#services" class="hover:text-brand-500 transition-colors">Services</a>
-                <a href="#how-it-works" class="hover:text-brand-500 transition-colors">How It Works</a>
-                <a href="#about" class="hover:text-brand-500 transition-colors">Service Area</a>
-                <a href="#contact" class="hover:text-brand-500 transition-colors">Contact</a>
+            <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">
+                Fast, Reliable Junk Removal in Ann Arbor
+            </h1>
+            <p class="text-brand-200 text-lg mb-8">
+                We haul away furniture, appliances, yard waste, and more. Same-day service available. Locally owned and operated.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="contact.html" class="bg-white text-brand-700 hover:bg-brand-50 px-6 py-3 rounded-lg font-bold text-center transition-colors shadow-md">
+                    Get a Free Quote
+                </a>
+                <a href="tel:7348650345" class="border border-brand-300 text-white hover:bg-brand-600 px-6 py-3 rounded-lg font-semibold text-center transition-colors flex items-center justify-center gap-2">
+                    <i data-lucide="phone" class="w-4 h-4"></i>
+                    (734) 865-0345
+                </a>
             </div>
-            <a href="#contact" class="hidden md:inline-block bg-brand-500 hover:bg-brand-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors shadow-sm">
-                Get Free Quote
+            <div class="mt-10 grid grid-cols-3 gap-4">
+                <div class="text-center">
+                    <div class="text-2xl font-bold">5.0★</div>
+                    <div class="text-brand-300 text-xs">Average Rating</div>
+                </div>
+                <div class="text-center border-x border-brand-600">
+                    <div class="text-2xl font-bold">Fast</div>
+                    <div class="text-brand-300 text-xs">Reliable Service</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl font-bold">Less</div>
+                    <div class="text-brand-300 text-xs">Than the Big Guys</div>
+                </div>
+            </div>
+        </div>
+        <!-- Quote Form in Hero -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 text-gray-900 dark:text-white">
+            <h2 class="text-lg font-bold mb-1 text-gray-900 dark:text-white">Get Your Free Quote</h2>
+            <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">No obligation. Upfront pricing. Fast response.</p>
+            <form id="heroQuoteForm" class="space-y-3">
+                <div>
+                    <label class="block text-xs font-semibold text-gray-600 dark:text-gray-400 mb-1">Your Name</label>
+                    <input type="text" name="name" placeholder="John Smith" required class="w-full border border-gray-200 dark:border-gray-600 dark:bg-gray-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 dark:text-white" />
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-600 dark:text-gray-400 mb-1">Phone Number</label>
+                    <input type="tel" name="phone" placeholder="(734) 555-0000" required class="w-full border border-gray-200 dark:border-gray-600 dark:bg-gray-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 dark:text-white" />
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-600 dark:text-gray-400 mb-1">What needs to go?</label>
+                    <textarea rows="3" name="description" placeholder="Old couch, broken appliances, garage cleanout..." required class="w-full border border-gray-200 dark:border-gray-600 dark:bg-gray-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 dark:text-white resize-none"></textarea>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-600 dark:text-gray-400 mb-1">Preferred Date</label>
+                    <input type="date" name="preferred_date" class="w-full border border-gray-200 dark:border-gray-600 dark:bg-gray-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 dark:text-white" />
+                </div>
+                <button type="submit" id="heroSubmitBtn" class="w-full bg-brand-500 hover:bg-brand-600 text-white py-3 rounded-lg font-bold transition-colors shadow-sm">
+                    Request My Free Quote
+                </button>
+                <div class="flex flex-col items-center mt-3 gap-1">
+                    <div class="flex justify-center" style="color:#FFD700; font-size:2rem; letter-spacing:2px;">
+                        &#9733;&#9733;&#9733;&#9733;&#9733;
+                    </div>
+                    <span class="text-xs text-gray-500 dark:text-gray-400 font-medium text-center">5-Star Rated Service, reviews from your neighbors around Washtenaw County</span>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Trust Bar -->
+<section class="bg-gray-50 dark:bg-gray-800 border-y border-gray-200 dark:border-gray-700 py-6 px-4">
+    <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div class="flex items-center justify-center gap-2 text-gray-700 dark:text-gray-300">
+            <i data-lucide="shield-check" class="w-5 h-5 text-brand-500"></i>
+            <span class="text-sm font-medium">Licensed &amp; Insured</span>
+        </div>
+        <div class="flex items-center justify-center gap-2 text-gray-700 dark:text-gray-300">
+            <i data-lucide="clock" class="w-5 h-5 text-brand-500"></i>
+            <span class="text-sm font-medium">Same-Day Available</span>
+        </div>
+        <div class="flex items-center justify-center gap-2 text-gray-700 dark:text-gray-300">
+            <i data-lucide="leaf" class="w-5 h-5 text-brand-500"></i>
+            <span class="text-sm font-medium">Eco-Friendly Disposal</span>
+        </div>
+        <div class="flex items-center justify-center gap-2 text-gray-700 dark:text-gray-300">
+            <i data-lucide="dollar-sign" class="w-5 h-5 text-brand-500"></i>
+            <span class="text-sm font-medium">Upfront Pricing</span>
+        </div>
+    </div>
+</section>
+
+<!-- Services Preview -->
+<section class="py-16 px-4">
+    <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-10">
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-3">Our Services</h2>
+            <p class="text-gray-500 dark:text-gray-400 max-w-xl mx-auto">From single item pickups to full property cleanouts, we handle it all.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:shadow-md transition-shadow">
+                <div class="w-12 h-12 bg-brand-100 dark:bg-brand-900 rounded-lg flex items-center justify-center mb-4">
+                    <i data-lucide="home" class="w-6 h-6 text-brand-600 dark:text-brand-400"></i>
+                </div>
+                <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">Residential Cleanouts</h3>
+                <p class="text-gray-500 dark:text-gray-400 text-sm">Garages, basements, attics, and full home cleanouts. We do all the heavy lifting.</p>
+            </div>
+            <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:shadow-md transition-shadow">
+                <div class="w-12 h-12 bg-brand-100 dark:bg-brand-900 rounded-lg flex items-center justify-center mb-4">
+                    <i data-lucide="sofa" class="w-6 h-6 text-brand-600 dark:text-brand-400"></i>
+                </div>
+                <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">Furniture Removal</h3>
+                <p class="text-gray-500 dark:text-gray-400 text-sm">Sofas, mattresses, dressers, tables — no item is too big or too awkward.</p>
+            </div>
+            <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:shadow-md transition-shadow">
+                <div class="w-12 h-12 bg-brand-100 dark:bg-brand-900 rounded-lg flex items-center justify-center mb-4">
+                    <i data-lucide="zap" class="w-6 h-6 text-brand-600 dark:text-brand-400"></i>
+                </div>
+                <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">Same-Day Service</h3>
+                <p class="text-gray-500 dark:text-gray-400 text-sm">Need it gone today? We offer same-day pickups when you book before noon.</p>
+            </div>
+        </div>
+        <div class="text-center mt-8">
+            <a href="services.html" class="inline-block bg-brand-500 hover:bg-brand-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors shadow-sm">
+                View All Services
             </a>
-            <!-- Hamburger (mobile only) -->
-            <button id="menuBtn" class="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors">
-                <i data-lucide="menu" class="w-6 h-6"></i>
-            </button>
         </div>
-        <!-- Mobile menu -->
-        <div id="mobileMenu" class="hidden md:hidden border-t border-gray-200 bg-white px-4 py-4 space-y-3">
-            <a href="#services"    onclick="closeMobileMenu()" class="block text-sm font-medium text-gray-700 hover:text-brand-500 py-1">Services</a>
-            <a href="#how-it-works" onclick="closeMobileMenu()" class="block text-sm font-medium text-gray-700 hover:text-brand-500 py-1">How It Works</a>
-            <a href="#about"       onclick="closeMobileMenu()" class="block text-sm font-medium text-gray-700 hover:text-brand-500 py-1">Service Area</a>
-            <a href="#contact"     onclick="closeMobileMenu()" class="block text-sm font-medium text-gray-700 hover:text-brand-500 py-1">Contact</a>
-            <a href="#contact"     onclick="closeMobileMenu()" class="block w-full text-center bg-brand-500 hover:bg-brand-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors">Get Free Quote</a>
-        </div>
-    </nav>
+    </div>
+</section>
 
-    <!-- Hero Section -->
-    <section class="relative text-white py-20 px-4 overflow-hidden">
-        <!-- Background photo -->
-        <div class="absolute inset-0">
-            <img src="junk-photo-2.jpeg" alt="" class="w-full h-full object-cover" />
-        </div>
-        <!-- Dark overlay -->
-        <div class="absolute inset-0 bg-brand-900 bg-opacity-80"></div>
-        <div class="relative max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-            <div>
-                <div class="inline-flex items-center gap-2 bg-brand-600 bg-opacity-60 text-brand-200 px-3 py-1 rounded-full text-sm font-medium mb-6">
-                    <i data-lucide="map-pin" class="w-4 h-4"></i>
-                    Proudly Serving Ann Arbor & Washtenaw County
-                </div>
-                <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">
-                    Fast, Reliable Junk Removal in Ann Arbor
-                </h1>
-                <p class="text-brand-200 text-lg mb-8">
-                    We haul away furniture, appliances, yard waste, and more. Same-day service available. Locally owned and operated.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="#contact" class="bg-white text-brand-700 hover:bg-brand-50 px-6 py-3 rounded-lg font-bold text-center transition-colors shadow-md">
-                        Get a Free Quote
-                    </a>
-                    <a href="tel:7348650345" class="border border-brand-300 text-white hover:bg-brand-600 px-6 py-3 rounded-lg font-semibold text-center transition-colors flex items-center justify-center gap-2">
-                        <i data-lucide="phone" class="w-4 h-4"></i>
-                        (734) 865-0345
-                    </a>
-                </div>
-                <!-- Trust signals row -->
-                <div class="mt-10 grid grid-cols-3 gap-4">
-                    <div class="text-center">
-                        <div class="text-2xl font-bold">5.0★</div>
-                        <div class="text-brand-300 text-xs">Average Rating</div>
-                    </div>
-                    <div class="text-center border-x border-brand-600">
-                        <div class="text-2xl font-bold">Fast</div>
-                        <div class="text-brand-300 text-xs">Reliable Service</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-2xl font-bold">Less</div>
-                        <div class="text-brand-300 text-xs">Than the Big Guys</div>
-                    </div>
-                </div>
-            </div>
-            <!-- Quote Form in Hero -->
-            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 text-gray-900 dark:text-white">
-                <h2 class="text-lg font-bold mb-1 text-gray-900 dark:text-white">Get Your Free Quote</h2>
-                <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">No obligation. Upfront pricing. Fast response.</p>
-                <form id="heroQuoteForm" class="space-y-3">
-                    <div>
-                        <label class="block text-xs font-semibold text-gray-600 dark:text-gray-400 mb-1">Your Name</label>
-                        <input type="text" name="name" placeholder="John Smith" required class="w-full border border-gray-200 dark:border-gray-600 dark:bg-gray-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 dark:text-white" />
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold text-gray-600 dark:text-gray-400 mb-1">Phone Number</label>
-                        <input type="tel" name="phone" placeholder="(734) 555-0000" required class="w-full border border-gray-200 dark:border-gray-600 dark:bg-gray-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 dark:text-white" />
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold text-gray-600 dark:text-gray-400 mb-1">What needs to go?</label>
-                        <textarea rows="3" name="description" placeholder="Old couch, broken appliances, garage cleanout..." required class="w-full border border-gray-200 dark:border-gray-600 dark:bg-gray-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 dark:text-white resize-none"></textarea>
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold text-gray-600 dark:text-gray-400 mb-1">Preferred Date</label>
-                        <input type="date" name="preferred_date" class="w-full border border-gray-200 dark:border-gray-600 dark:bg-gray-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 dark:text-white" />
-                    </div>
-                    <button type="submit" id="heroSubmitBtn" class="w-full bg-brand-500 hover:bg-brand-600 text-white py-3 rounded-lg font-bold transition-colors shadow-sm">
-                        Request My Free Quote
-                    </button>
-                    <div class="flex flex-col items-center mt-3 gap-1">
-                        <div class="flex justify-center" style="color:#FFD700; font-size:2rem; letter-spacing:2px;">
-                            &#9733;&#9733;&#9733;&#9733;&#9733;
-                        </div>
-                        <span class="text-xs text-gray-500 dark:text-gray-400 font-medium text-center">5-Star Rated Service, reviews from your neighbors around Washtenaw County</span>
-                    </div>
-                </form>
+<!-- Reviews -->
+<section class="bg-gray-50 dark:bg-gray-800 py-16 px-4">
+    <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-10">
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-2">What Ann Arbor Residents Say</h2>
+            <div class="flex justify-center gap-1 text-amber-400 mt-2">
+                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
             </div>
         </div>
-    </section>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6">
+                <div class="flex gap-1 text-amber-400 mb-3">
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                </div>
+                <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">"Junk Hogs is my go to whenever we do a project that leaves lots of mess. They're fast and incredibly professional. Would recommend!"</p>
+                <div class="text-sm font-semibold text-gray-900 dark:text-white">Sarah M. — Ann Arbor</div>
+            </div>
+            <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6">
+                <div class="flex gap-1 text-amber-400 mb-3">
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                </div>
+                <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">"They moved a few couches for me for a very reasonable price."</p>
+                <div class="text-sm font-semibold text-gray-900 dark:text-white">Tom K. — Ypsilanti</div>
+            </div>
+            <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6">
+                <div class="flex gap-1 text-amber-400 mb-3">
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                </div>
+                <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">"My favorite part about Junk Hogs is how honest they are. We settled on a price before they came and they stuck to it!"</p>
+                <div class="text-sm font-semibold text-gray-900 dark:text-white">Priya L. — Downtown Ann Arbor</div>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <!-- Trust Bar -->
-    <section class="bg-gray-50 dark:bg-gray-800 border-y border-gray-200 dark:border-gray-700 py-6 px-4">
-        <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            <div class="flex items-center justify-center gap-2 text-gray-700 dark:text-gray-300">
-                <i data-lucide="shield-check" class="w-5 h-5 text-brand-500"></i>
-                <span class="text-sm font-medium">Licensed &amp; Insured</span>
+<!-- Footer -->
+<footer class="bg-gray-900 dark:bg-gray-950 text-gray-400 py-10 px-4">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+        <div>
+            <div class="flex items-center gap-2 mb-3">
+                <img src="logo.png" alt="Junk Hogs Logo" class="h-16 w-auto" />
             </div>
-            <div class="flex items-center justify-center gap-2 text-gray-700 dark:text-gray-300">
-                <i data-lucide="clock" class="w-5 h-5 text-brand-500"></i>
-                <span class="text-sm font-medium">Same-Day Available</span>
-            </div>
-            <div class="flex items-center justify-center gap-2 text-gray-700 dark:text-gray-300">
-                <i data-lucide="leaf" class="w-5 h-5 text-brand-500"></i>
-                <span class="text-sm font-medium">Eco-Friendly Disposal</span>
-            </div>
-            <div class="flex items-center justify-center gap-2 text-gray-700 dark:text-gray-300">
-                <i data-lucide="dollar-sign" class="w-5 h-5 text-brand-500"></i>
-                <span class="text-sm font-medium">Upfront Pricing</span>
+            <p class="text-sm">Locally owned and operated junk removal serving Ann Arbor and Washtenaw County.</p>
+        </div>
+        <div>
+            <h4 class="text-white font-semibold mb-3 text-sm">Contact</h4>
+            <div class="space-y-1 text-sm">
+                <div>(734) 865-0345</div>
+                <div>malachifriedlund@gmail.com</div>
+                <div>Mon–Sat: 7am – 7pm</div>
             </div>
         </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-16 px-4">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-10">
-                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-3">Our Services</h2>
-                <p class="text-gray-500 dark:text-gray-400 max-w-xl mx-auto">From single item pickups to full property cleanouts, we handle it all.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Service Cards -->
-                <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:shadow-md transition-shadow">
-                    <div class="w-12 h-12 bg-brand-100 dark:bg-brand-900 rounded-lg flex items-center justify-center mb-4">
-                        <i data-lucide="home" class="w-6 h-6 text-brand-600 dark:text-brand-400"></i>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">Residential Cleanouts</h3>
-                    <p class="text-gray-500 dark:text-gray-400 text-sm">Garages, basements, attics, and full home cleanouts. We do all the heavy lifting.</p>
-                </div>
-                <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:shadow-md transition-shadow">
-                    <div class="w-12 h-12 bg-brand-100 dark:bg-brand-900 rounded-lg flex items-center justify-center mb-4">
-                        <i data-lucide="building-2" class="w-6 h-6 text-brand-600 dark:text-brand-400"></i>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">Commercial Removal</h3>
-                    <p class="text-gray-500 dark:text-gray-400 text-sm">Office furniture, equipment, and renovation debris removal for businesses of all sizes.</p>
-                </div>
-                <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:shadow-md transition-shadow">
-                    <div class="w-12 h-12 bg-brand-100 dark:bg-brand-900 rounded-lg flex items-center justify-center mb-4">
-                        <i data-lucide="zap" class="w-6 h-6 text-brand-600 dark:text-brand-400"></i>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">Same-Day Service</h3>
-                    <p class="text-gray-500 dark:text-gray-400 text-sm">Need it gone today? We offer same-day pickups when you book before noon.</p>
-                </div>
-                <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:shadow-md transition-shadow">
-                    <div class="w-12 h-12 bg-brand-100 dark:bg-brand-900 rounded-lg flex items-center justify-center mb-4">
-                        <i data-lucide="sofa" class="w-6 h-6 text-brand-600 dark:text-brand-400"></i>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">Furniture Removal</h3>
-                    <p class="text-gray-500 dark:text-gray-400 text-sm">Sofas, mattresses, dressers, tables — no item is too big or too awkward.</p>
-                </div>
-                <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:shadow-md transition-shadow">
-                    <div class="w-12 h-12 bg-brand-100 dark:bg-brand-900 rounded-lg flex items-center justify-center mb-4">
-                        <i data-lucide="refrigerator" class="w-6 h-6 text-brand-600 dark:text-brand-400"></i>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">Appliance Hauling</h3>
-                    <p class="text-gray-500 dark:text-gray-400 text-sm">Fridges, washers, dryers, ovens — properly disposed of or recycled responsibly.</p>
-                </div>
-                <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:shadow-md transition-shadow">
-                    <div class="w-12 h-12 bg-brand-100 dark:bg-brand-900 rounded-lg flex items-center justify-center mb-4">
-                        <i data-lucide="trees" class="w-6 h-6 text-brand-600 dark:text-brand-400"></i>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">Yard Waste</h3>
-                    <p class="text-gray-500 dark:text-gray-400 text-sm">Branches, brush, landscaping debris — cleared and hauled away cleanly.</p>
-                </div>
+        <div>
+            <h4 class="text-white font-semibold mb-3 text-sm">Quick Links</h4>
+            <div class="space-y-1 text-sm">
+                <div><a href="services.html" class="hover:text-white transition-colors">Services</a></div>
+                <div><a href="our-story.html" class="hover:text-white transition-colors">Our Story</a></div>
+                <div><a href="service-area.html" class="hover:text-white transition-colors">Service Area</a></div>
+                <div><a href="contact.html" class="hover:text-white transition-colors">Get a Quote</a></div>
             </div>
         </div>
-    </section>
+    </div>
+    <div class="max-w-6xl mx-auto mt-8 pt-6 border-t border-gray-800 text-center text-xs">
+        &copy; 2026 Junk Hogs. All rights reserved. Licensed &amp; Insured in Michigan.
+    </div>
+</footer>
 
-    <!-- How It Works -->
-    <section id="how-it-works" class="bg-gray-50 dark:bg-gray-800 py-16 px-4">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-3">How It Works</h2>
-            <p class="text-gray-500 dark:text-gray-400 mb-12">Three simple steps. No hassle. No hidden fees.</p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-                <!-- Connector line (desktop only) -->
-                <div class="hidden md:block absolute top-8 left-1/4 right-1/4 h-0.5 bg-brand-200 dark:bg-brand-800 z-0"></div>
-                <div class="relative z-10 flex flex-col items-center">
-                    <div class="w-16 h-16 bg-brand-500 text-white rounded-full flex items-center justify-center text-xl font-bold shadow-md mb-4">1</div>
-                    <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">Book Online or Call</h3>
-                    <p class="text-gray-500 dark:text-gray-400 text-sm">Fill out our quick form or call us directly. We'll give you an upfront quote — no surprises.</p>
-                </div>
-                <div class="relative z-10 flex flex-col items-center">
-                    <div class="w-16 h-16 bg-brand-500 text-white rounded-full flex items-center justify-center text-xl font-bold shadow-md mb-4">2</div>
-                    <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">We Show Up On Time</h3>
-                    <p class="text-gray-500 dark:text-gray-400 text-sm">Our crew arrives at your scheduled window, ready to work. You just point and we haul.</p>
-                </div>
-                <div class="relative z-10 flex flex-col items-center">
-                    <div class="w-16 h-16 bg-brand-500 text-white rounded-full flex items-center justify-center text-xl font-bold shadow-md mb-4">3</div>
-                    <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">Done &amp; Dusted</h3>
-                    <p class="text-gray-500 dark:text-gray-400 text-sm">We sweep up, take everything with us, and you're left with a clean space. That's it.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<script>
+    if (typeof lucide !== 'undefined') { lucide.createIcons(); }
 
-    <!-- Reviews -->
-    <section class="py-16 px-4">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-10">
-                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-2">What Ann Arbor Residents Say</h2>
-                <div class="flex justify-center gap-1 text-amber-400 mt-2">
-                    <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                    <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                    <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                    <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                    <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                </div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6">
-                    <div class="flex gap-1 text-amber-400 mb-3">
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                    </div>
-                    <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">"Junk Hogs is my go to whenever we do a project that leaves lots of mess. They're fast and incredibly professional. Would recommend!"</p>
-                    <div class="text-sm font-semibold text-gray-900 dark:text-white">Sarah M. — Ann Arbor</div>
-                </div>
-                <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6">
-                    <div class="flex gap-1 text-amber-400 mb-3">
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                    </div>
-                    <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">"They moved a few couches for me for a very reasonable price."</p>
-                    <div class="text-sm font-semibold text-gray-900 dark:text-white">Tom K. — Ypsilanti</div>
-                </div>
-                <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6">
-                    <div class="flex gap-1 text-amber-400 mb-3">
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                    </div>
-                    <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">"My favorite part about Junk Hogs is how honest they are. We settled on a price before they came and they stuck to it!"</p>
-                    <div class="text-sm font-semibold text-gray-900 dark:text-white">Priya L. — Downtown Ann Arbor</div>
-                </div>
-            </div>
-        </div>
-    </section>
+    var menuBtn    = document.getElementById('menuBtn');
+    var mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+    });
+    function closeMobileMenu() {
+        mobileMenu.classList.add('hidden');
+    }
 
-    <!-- About / Service Area -->
-    <section id="about" class="bg-brand-50 dark:bg-gray-800 py-16 px-4">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-            <div>
-                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Locally Owned, And Operated</h2>
-                <p class="text-gray-600 dark:text-gray-300 mb-4">
-                    Junk Hogs cares about Ann Arbor, our team has been living in and serving here for decades. We're not a national franchise, we're your neighbors. We care about you and your individual situations, that's what makes us different.
-                </p>
-                <p class="text-gray-600 dark:text-gray-300 mb-6">
-                    We responsibly dispose of everything we haul, donating usable items to local charities, recycling what we can, and only sending true junk to the landfill.
-                </p>
-                <div class="space-y-2">
-                    <div class="flex items-center gap-2 text-gray-700 dark:text-gray-300 text-sm">
-                        <i data-lucide="check-circle" class="w-4 h-4 text-brand-500 flex-shrink-0"></i>
-                        Ann Arbor, Ypsilanti, Saline, Dexter, Chelsea
-                    </div>
-                    <div class="flex items-center gap-2 text-gray-700 dark:text-gray-300 text-sm">
-                        <i data-lucide="check-circle" class="w-4 h-4 text-brand-500 flex-shrink-0"></i>
-                        Canton, Belleville, Milan, and surrounding areas
-                    </div>
-                    <div class="flex items-center gap-2 text-gray-700 dark:text-gray-300 text-sm">
-                        <i data-lucide="check-circle" class="w-4 h-4 text-brand-500 flex-shrink-0"></i>
-                        University of Michigan campus and student housing
-                    </div>
-                </div>
-            </div>
-            <div class="rounded-xl overflow-hidden shadow-md">
-                <img src="junk-photo-1.jpeg" alt="Junk Hogs crew at work" class="w-full h-72 object-cover" />
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact / Quote Form -->
-    <section id="contact" class="py-16 px-4">
-        <div class="max-w-3xl mx-auto text-center">
-            <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-3">Ready to Clear the Clutter?</h2>
-            <p class="text-gray-500 dark:text-gray-400 mb-10">Fill out the form below and we'll get back to you within the hour with a free, no-obligation quote.</p>
-            <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-md p-8">
-                <form id="contactForm" class="space-y-4 text-left">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-xs font-semibold text-gray-600 dark:text-gray-400 mb-1">Full Name *</label>
-                            <input type="text" name="name" placeholder="Jane Doe" required class="w-full border border-gray-200 dark:border-gray-600 dark:bg-gray-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 dark:text-white" />
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-gray-600 dark:text-gray-400 mb-1">Phone Number *</label>
-                            <input type="tel" name="phone" placeholder="(734) 555-0000" required class="w-full border border-gray-200 dark:border-gray-600 dark:bg-gray-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 dark:text-white" />
-                        </div>
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold text-gray-600 dark:text-gray-400 mb-1">Email Address</label>
-                        <input type="email" name="email" placeholder="jane@example.com" class="w-full border border-gray-200 dark:border-gray-600 dark:bg-gray-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 dark:text-white" />
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold text-gray-600 dark:text-gray-400 mb-1">Service Address</label>
-                        <input type="text" name="address" placeholder="123 Main St, Ann Arbor, MI" class="w-full border border-gray-200 dark:border-gray-600 dark:bg-gray-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 dark:text-white" />
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold text-gray-600 dark:text-gray-400 mb-1">What needs to be removed? *</label>
-                        <textarea rows="4" name="description" placeholder="Describe the items or amount of junk. The more detail, the more accurate your quote will be." required class="w-full border border-gray-200 dark:border-gray-600 dark:bg-gray-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 dark:text-white resize-none"></textarea>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-xs font-semibold text-gray-600 dark:text-gray-400 mb-1">Preferred Date</label>
-                            <input type="date" name="preferred_date" class="w-full border border-gray-200 dark:border-gray-600 dark:bg-gray-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 dark:text-white" />
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-gray-600 dark:text-gray-400 mb-1">How'd you hear about us?</label>
-                            <select name="referral_source" class="w-full border border-gray-200 dark:border-gray-600 dark:bg-gray-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 dark:text-white">
-                                <option>Google Search</option>
-                                <option>Referral</option>
-                                <option>Nextdoor</option>
-                                <option>Facebook</option>
-                                <option>Other</option>
-                            </select>
-                        </div>
-                    </div>
-                    <button type="submit" id="contactSubmitBtn" class="w-full bg-brand-500 hover:bg-brand-600 text-white py-3 rounded-lg font-bold text-sm transition-colors shadow-sm">
-                        Submit My Quote Request
-                    </button>
-                    <p class="text-xs text-center text-gray-400">We respond within 1 hour during business hours (Mon-Sat 7am-7pm)</p>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 dark:bg-gray-950 text-gray-400 py-10 px-4">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
-            <div>
-                <div class="flex items-center gap-2 mb-3">
-                    <img src="logo.png" alt="Junk Hogs Logo" class="h-16 w-auto" />
-                </div>
-                <p class="text-sm">Locally owned and operated junk removal serving Ann Arbor and Washtenaw County.</p>
-            </div>
-            <div>
-                <h4 class="text-white font-semibold mb-3 text-sm">Contact</h4>
-                <div class="space-y-1 text-sm">
-                    <div>(734) 865-0345</div>
-                    <div>malachifriedlund@gmail.com</div>
-                    <div>Mon–Sat: 7am – 7pm</div>
-                </div>
-            </div>
-            <div>
-                <h4 class="text-white font-semibold mb-3 text-sm">Services</h4>
-                <div class="space-y-1 text-sm">
-                    <div>Residential Cleanouts</div>
-                    <div>Commercial Removal</div>
-                    <div>Appliance Hauling</div>
-                    <div>Same-Day Service</div>
-                </div>
-            </div>
-        </div>
-        <div class="max-w-6xl mx-auto mt-8 pt-6 border-t border-gray-800 text-center text-xs">
-            &copy; 2026 Junk Hogs. All rights reserved. Licensed &amp; Insured in Michigan.
-        </div>
-    </footer>
-
-    <script>
-        if (typeof lucide !== 'undefined') { lucide.createIcons(); }
-
-        var menuBtn    = document.getElementById('menuBtn');
-        var mobileMenu = document.getElementById('mobileMenu');
-        menuBtn.addEventListener('click', function() {
-            mobileMenu.classList.toggle('hidden');
+    function sendTelegram(msg) {
+        fetch('https://junk-hogs-telegram.malachifriedlund.workers.dev', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ message: msg })
         });
-        function closeMobileMenu() {
-            mobileMenu.classList.add('hidden');
-        }
+    }
 
-        function sendTelegram(msg) {
-            fetch('https://junk-hogs-telegram.malachifriedlund.workers.dev', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ message: msg })
-            });
-        }
+    function setupForm(formId, btnId) {
+        var form = document.getElementById(formId);
+        var btn  = document.getElementById(btnId);
+        if (!form || !btn) return;
+        var origText = btn.textContent;
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            btn.textContent = 'Sending…';
+            btn.disabled = true;
+            var data = new FormData(form);
+            var msg = '🐷 <b>New Quote Request — Junk Hogs</b>\n\n'
+                + '👤 <b>Name:</b> '        + (data.get('name')           || '—') + '\n'
+                + '📞 <b>Phone:</b> '        + (data.get('phone')          || '—') + '\n'
+                + '🗑 <b>Items:</b> '        + (data.get('description')    || '—') + '\n'
+                + '📅 <b>Date:</b> '         + (data.get('preferred_date') || '—');
+            sendTelegram(msg);
+            btn.textContent = 'Request Sent!';
+            btn.style.backgroundColor = '#16a34a';
+            form.reset();
+            setTimeout(function() {
+                btn.textContent = origText;
+                btn.style.backgroundColor = '';
+                btn.disabled = false;
+            }, 4000);
+        });
+    }
 
-        function setupForm(formId, btnId) {
-            var form = document.getElementById(formId);
-            var btn  = document.getElementById(btnId);
-            if (!form || !btn) return;
-            var origText = btn.textContent;
-
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                btn.textContent = 'Sending…';
-                btn.disabled = true;
-
-                var data = new FormData(form);
-                var msg = '🐷 <b>New Quote Request — Junk Hogs</b>\n\n'
-                    + '👤 <b>Name:</b> '        + (data.get('name')           || '—') + '\n'
-                    + '📞 <b>Phone:</b> '        + (data.get('phone')          || '—') + '\n'
-                    + '📧 <b>Email:</b> '        + (data.get('email')          || '—') + '\n'
-                    + '📍 <b>Address:</b> '      + (data.get('address')        || '—') + '\n'
-                    + '🗑 <b>Items:</b> '        + (data.get('description')    || '—') + '\n'
-                    + '📅 <b>Date:</b> '         + (data.get('preferred_date') || '—') + '\n'
-                    + '📣 <b>Heard via:</b> '    + (data.get('referral_source')|| '—');
-
-                sendTelegram(msg);
-
-                btn.textContent = 'Request Sent!';
-                btn.style.backgroundColor = '#16a34a';
-                form.reset();
-                setTimeout(function() {
-                    btn.textContent = origText;
-                    btn.style.backgroundColor = '';
-                    btn.disabled = false;
-                }, 4000);
-            });
-        }
-
-        setupForm('heroQuoteForm',  'heroSubmitBtn');
-        setupForm('contactForm',    'contactSubmitBtn');
-    </script>
+    setupForm('heroQuoteForm', 'heroSubmitBtn');
+</script>
 </body>
 </html>
