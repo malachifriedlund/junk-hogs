@@ -15,21 +15,46 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="logo.png">
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        /* Sticky bottom CTA — mobile only */
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 12px 16px;
+            background: white;
+            border-top: 1px solid #e5e7eb;
+            display: flex;
+            gap: 10px;
+        }
+        .sticky-cta a { flex: 1; text-align: center; text-decoration: none; font-weight: 700; font-size: 14px; padding: 14px; border-radius: 10px; }
+        .sticky-cta .cta-primary { background: #1e3066; color: white; }
+        .sticky-cta .cta-secondary { border: 2px solid #1e3066; color: #1e3066; background: white; }
+        @media (min-width: 768px) {
+            .sticky-cta { display: none; }
+        }
+        /* Bottom padding so content doesn't hide behind sticky bar on mobile */
+        @media (max-width: 767px) {
+            footer { padding-bottom: 100px !important; }
+        }
+    </style>
 </head>
-<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+<body class="bg-white text-gray-900">
 
-<!-- Navigation -->
-<nav class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 sticky top-0 z-40 shadow-sm">
-    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-        <div class="flex items-center gap-2">
-            <a href="index.html"><img src="logo.png" alt="Junk Hogs Logo" style="height:70px;width:auto;" /></a>
-        </div>
-        <div class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600 dark:text-gray-300">
-            <a href="index.html" class="text-brand-500 font-semibold transition-colors">Home</a>
-            <a href="services.html" class="hover:text-brand-500 transition-colors">Services</a>
-            <a href="our-story.html" class="hover:text-brand-500 transition-colors">Our Story</a>
+<!-- NAVIGATION -->
+<nav class="bg-white border-b border-gray-200 sticky top-0 z-40 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+        <a href="index.html">
+            <img src="logo.png" alt="Junk Hogs Logo" style="height:60px;width:auto;">
+        </a>
+        <div class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600">
+            <a href="index.html"        class="text-brand-500 font-semibold">Home</a>
+            <a href="services.html"     class="hover:text-brand-500 transition-colors">Services</a>
+            <a href="our-story.html"    class="hover:text-brand-500 transition-colors">Our Story</a>
             <a href="service-area.html" class="hover:text-brand-500 transition-colors">Service Area</a>
-            <a href="contact.html" class="hover:text-brand-500 transition-colors">Contact</a>
+            <a href="contact.html"      class="hover:text-brand-500 transition-colors">Contact</a>
         </div>
         <a href="contact.html" class="hidden md:inline-block bg-brand-500 hover:bg-brand-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors shadow-sm">
             Get Free Quote
@@ -48,207 +73,268 @@
     </div>
 </nav>
 
-<!-- Hero Section -->
-<section class="relative text-white py-20 px-4 overflow-hidden">
-    <div class="absolute inset-0">
-        <img src="junk-photo-2.jpeg" alt="" class="w-full h-full object-cover" />
-    </div>
-    <div class="absolute inset-0 bg-brand-900 bg-opacity-80"></div>
-    <div class="relative max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+<!-- HERO -->
+<section style="position:relative; overflow:hidden; min-height:480px;">
+    <img src="junk-photo-2.jpeg" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center;">
+    <div style="position:absolute; inset:0; background:linear-gradient(to bottom, rgba(14,22,52,0.55) 0%, rgba(14,22,52,0.88) 100%);"></div>
+    <div class="relative max-w-6xl mx-auto px-5 py-12 md:py-20 grid md:grid-cols-2 gap-10 items-center">
+        <!-- Left: headline + CTAs -->
         <div>
-            <div class="inline-flex items-center gap-2 bg-brand-600 bg-opacity-60 text-brand-200 px-3 py-1 rounded-full text-sm font-medium mb-6">
-                <i data-lucide="map-pin" class="w-4 h-4"></i>
-                Proudly Serving Ann Arbor & Washtenaw County
+            <div style="display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.22); color:#c7d2fe; font-size:12px; font-weight:600; padding:4px 12px; border-radius:100px; margin-bottom:14px;">
+                📍 Ann Arbor &amp; Washtenaw County
             </div>
-            <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">
-                Fast, Reliable Junk Removal in Ann Arbor
+            <h1 style="color:white; font-size:clamp(28px,6vw,48px); font-weight:800; line-height:1.15; margin:0 0 12px;">
+                Junk Gone.<br>Same Day.
             </h1>
-            <p class="text-brand-200 text-lg mb-8">
-                We haul away furniture, appliances, yard waste, and more. Same-day service available. Locally owned and operated.
+            <p style="color:#c7d2fe; font-size:16px; margin:0 0 24px; line-height:1.6;">
+                Locally owned. Upfront pricing. No surprises. We haul furniture, appliances, yard waste, and more.
             </p>
-            <div class="flex flex-col sm:flex-row gap-4">
-                <a href="contact.html" class="bg-white text-brand-700 hover:bg-brand-50 px-6 py-3 rounded-lg font-bold text-center transition-colors shadow-md">
+            <!-- Mobile: two CTA buttons -->
+            <div class="flex flex-col sm:flex-row gap-3 md:flex-row">
+                <a href="#quote" style="background:white; color:#1e3066; font-size:15px; font-weight:800; padding:14px 24px; border-radius:10px; text-align:center; text-decoration:none; box-shadow:0 2px 10px rgba(0,0,0,0.2);">
                     Get a Free Quote
                 </a>
-                <a href="tel:7348650345" class="border border-brand-300 text-white hover:bg-brand-600 px-6 py-3 rounded-lg font-semibold text-center transition-colors flex items-center justify-center gap-2">
-                    <i data-lucide="phone" class="w-4 h-4"></i>
-                    (734) 865-0345
+                <a href="tel:7348650345" style="border:2px solid rgba(255,255,255,0.6); color:white; font-size:15px; font-weight:700; padding:14px 24px; border-radius:10px; text-align:center; text-decoration:none; display:flex; align-items:center; justify-content:center; gap:8px;">
+                    <i data-lucide="phone" class="w-4 h-4"></i>(734) 865-0345
                 </a>
             </div>
-            <div class="mt-10 grid grid-cols-3 gap-4">
-                <div class="text-center">
-                    <div class="text-2xl font-bold">5.0★</div>
-                    <div class="text-brand-300 text-xs">Average Rating</div>
-                </div>
-                <div class="text-center border-x border-brand-600">
-                    <div class="text-2xl font-bold">Fast</div>
-                    <div class="text-brand-300 text-xs">Reliable Service</div>
-                </div>
-                <div class="text-center">
-                    <div class="text-2xl font-bold">Less</div>
-                    <div class="text-brand-300 text-xs">Than the Big Guys</div>
-                </div>
+            <div style="display:flex; align-items:center; gap:8px; margin-top:18px;">
+                <span style="color:#f59e0b; font-size:16px; letter-spacing:2px;">★★★★★</span>
+                <span style="color:#c7d2fe; font-size:13px;">5-star rated by your Washtenaw County neighbors</span>
             </div>
         </div>
-        <!-- Quote Form in Hero -->
-        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 text-gray-900 dark:text-white">
-            <h2 class="text-lg font-bold mb-1 text-gray-900 dark:text-white">Get Your Free Quote</h2>
-            <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">No obligation. Upfront pricing. Fast response.</p>
+        <!-- Right: form (desktop only — hidden on mobile, shown in own section below) -->
+        <div class="hidden md:block bg-white rounded-xl shadow-lg p-6 text-gray-900">
+            <h2 class="text-lg font-bold mb-1">Get Your Free Quote</h2>
+            <p class="text-gray-500 text-sm mb-4">No obligation. Upfront pricing. Fast response.</p>
             <form id="heroQuoteForm" class="space-y-3">
                 <div>
-                    <label class="block text-xs font-semibold text-gray-600 dark:text-gray-400 mb-1">Your Name</label>
-                    <input type="text" name="name" placeholder="John Smith" required class="w-full border border-gray-200 dark:border-gray-600 dark:bg-gray-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 dark:text-white" />
+                    <label class="block text-xs font-semibold text-gray-600 mb-1">Your Name</label>
+                    <input type="text" name="name" placeholder="John Smith" required class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500" />
                 </div>
                 <div>
-                    <label class="block text-xs font-semibold text-gray-600 dark:text-gray-400 mb-1">Phone Number</label>
-                    <input type="tel" name="phone" placeholder="(734) 555-0000" required class="w-full border border-gray-200 dark:border-gray-600 dark:bg-gray-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 dark:text-white" />
+                    <label class="block text-xs font-semibold text-gray-600 mb-1">Phone Number</label>
+                    <input type="tel" name="phone" placeholder="(734) 555-0000" required class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500" />
                 </div>
                 <div>
-                    <label class="block text-xs font-semibold text-gray-600 dark:text-gray-400 mb-1">What needs to go?</label>
-                    <textarea rows="3" name="description" placeholder="Old couch, broken appliances, garage cleanout..." required class="w-full border border-gray-200 dark:border-gray-600 dark:bg-gray-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 dark:text-white resize-none"></textarea>
+                    <label class="block text-xs font-semibold text-gray-600 mb-1">What needs to go?</label>
+                    <textarea rows="3" name="description" placeholder="Old couch, broken appliances, garage cleanout..." required class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 resize-none"></textarea>
                 </div>
                 <div>
-                    <label class="block text-xs font-semibold text-gray-600 dark:text-gray-400 mb-1">Preferred Date</label>
-                    <input type="date" name="preferred_date" class="w-full border border-gray-200 dark:border-gray-600 dark:bg-gray-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 dark:text-white" />
+                    <label class="block text-xs font-semibold text-gray-600 mb-1">Preferred Date</label>
+                    <input type="date" name="preferred_date" class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500" />
                 </div>
                 <button type="submit" id="heroSubmitBtn" class="w-full bg-brand-500 hover:bg-brand-600 text-white py-3 rounded-lg font-bold transition-colors shadow-sm">
                     Request My Free Quote
                 </button>
-                <div class="flex flex-col items-center mt-3 gap-1">
-                    <div class="flex justify-center" style="color:#FFD700; font-size:2rem; letter-spacing:2px;">
-                        &#9733;&#9733;&#9733;&#9733;&#9733;
-                    </div>
-                    <span class="text-xs text-gray-500 dark:text-gray-400 font-medium text-center">5-Star Rated Service, reviews from your neighbors around Washtenaw County</span>
+                <div style="text-align:center; padding-top:4px;">
+                    <span style="color:#f59e0b; font-size:18px; letter-spacing:2px;">★★★★★</span>
+                    <p class="text-xs text-gray-500 mt-1">5-Star Rated · Reviewed by your neighbors</p>
                 </div>
             </form>
         </div>
     </div>
 </section>
 
-<!-- Trust Bar -->
-<section class="bg-gray-50 dark:bg-gray-800 border-y border-gray-200 dark:border-gray-700 py-6 px-4">
-    <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-        <div class="flex items-center justify-center gap-2 text-gray-700 dark:text-gray-300">
-            <i data-lucide="shield-check" class="w-5 h-5 text-brand-500"></i>
-            <span class="text-sm font-medium">Licensed &amp; Insured</span>
+<!-- TRUST BAR -->
+<section style="background:#f8fafc; border-bottom:1px solid #e5e7eb; padding:16px 20px;">
+    <div class="max-w-6xl mx-auto" style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+        <div style="display:flex; align-items:center; gap:8px; color:#374151; font-size:13px; font-weight:500;">
+            <span style="width:32px; height:32px; background:#e0e7ff; border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">🛡️</span>
+            Licensed &amp; Insured
         </div>
-        <div class="flex items-center justify-center gap-2 text-gray-700 dark:text-gray-300">
-            <i data-lucide="clock" class="w-5 h-5 text-brand-500"></i>
-            <span class="text-sm font-medium">Same-Day Available</span>
+        <div style="display:flex; align-items:center; gap:8px; color:#374151; font-size:13px; font-weight:500;">
+            <span style="width:32px; height:32px; background:#e0e7ff; border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">⚡</span>
+            Same-Day Available
         </div>
-        <div class="flex items-center justify-center gap-2 text-gray-700 dark:text-gray-300">
-            <i data-lucide="leaf" class="w-5 h-5 text-brand-500"></i>
-            <span class="text-sm font-medium">Eco-Friendly Disposal</span>
+        <div style="display:flex; align-items:center; gap:8px; color:#374151; font-size:13px; font-weight:500;">
+            <span style="width:32px; height:32px; background:#e0e7ff; border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">💰</span>
+            Upfront Pricing
         </div>
-        <div class="flex items-center justify-center gap-2 text-gray-700 dark:text-gray-300">
-            <i data-lucide="dollar-sign" class="w-5 h-5 text-brand-500"></i>
-            <span class="text-sm font-medium">Upfront Pricing</span>
+        <div style="display:flex; align-items:center; gap:8px; color:#374151; font-size:13px; font-weight:500;">
+            <span style="width:32px; height:32px; background:#e0e7ff; border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">🌿</span>
+            Eco-Friendly
         </div>
     </div>
 </section>
 
-<!-- Services Preview -->
-<section class="py-16 px-4">
+<!-- MOBILE QUOTE FORM (hidden on desktop — desktop sees form in hero) -->
+<section id="quote" class="md:hidden" style="padding:36px 20px; background:white;">
+    <p style="color:#1e3066; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; margin:0 0 6px;">Get Started</p>
+    <h2 style="font-size:22px; font-weight:800; color:#111827; margin:0 0 6px;">Get Your Free Quote</h2>
+    <p style="font-size:14px; color:#6b7280; margin:0 0 20px;">No obligation. We respond within the hour.</p>
+    <form id="mobileQuoteForm" style="display:flex; flex-direction:column; gap:14px;">
+        <div>
+            <label style="display:block; font-size:12px; font-weight:600; color:#374151; margin-bottom:5px;">Your Name *</label>
+            <input type="text" name="name" placeholder="Jane Smith" required style="width:100%; border:1.5px solid #e5e7eb; border-radius:10px; padding:12px 14px; font-size:15px; color:#111827; box-sizing:border-box; outline:none;" />
+        </div>
+        <div>
+            <label style="display:block; font-size:12px; font-weight:600; color:#374151; margin-bottom:5px;">Phone Number *</label>
+            <input type="tel" name="phone" placeholder="(734) 555-0000" required style="width:100%; border:1.5px solid #e5e7eb; border-radius:10px; padding:12px 14px; font-size:15px; color:#111827; box-sizing:border-box; outline:none;" />
+        </div>
+        <div>
+            <label style="display:block; font-size:12px; font-weight:600; color:#374151; margin-bottom:5px;">What needs to go? *</label>
+            <textarea rows="3" name="description" placeholder="Old couch, broken appliances, garage cleanout..." required style="width:100%; border:1.5px solid #e5e7eb; border-radius:10px; padding:12px 14px; font-size:15px; color:#111827; box-sizing:border-box; resize:none; outline:none;"></textarea>
+        </div>
+        <div>
+            <label style="display:block; font-size:12px; font-weight:600; color:#374151; margin-bottom:5px;">Preferred Date</label>
+            <input type="date" name="preferred_date" style="width:100%; border:1.5px solid #e5e7eb; border-radius:10px; padding:12px 14px; font-size:15px; color:#6b7280; box-sizing:border-box; outline:none;" />
+        </div>
+        <button type="submit" id="mobileSubmitBtn" style="background:#1e3066; color:white; font-size:16px; font-weight:800; padding:16px; border-radius:10px; border:none; cursor:pointer; width:100%;">
+            Request My Free Quote
+        </button>
+        <div style="text-align:center; padding-top:4px;">
+            <span style="color:#f59e0b; font-size:18px; letter-spacing:2px;">★★★★★</span>
+            <p style="color:#6b7280; font-size:12px; margin:4px 0 0;">5-Star Rated · Reviewed by your neighbors</p>
+        </div>
+    </form>
+</section>
+
+<!-- HOW IT WORKS -->
+<section style="background:#f8fafc; padding:40px 20px;">
+    <div class="max-w-4xl mx-auto">
+        <p style="color:#1e3066; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; margin:0 0 6px;">Simple Process</p>
+        <h2 style="font-size:clamp(20px,4vw,28px); font-weight:800; color:#111827; margin:0 0 28px;">How It Works</h2>
+        <!-- Mobile: vertical timeline. Desktop: 3 columns -->
+        <div class="md:hidden" style="display:flex; flex-direction:column; gap:0;">
+            <div style="display:flex; gap:16px; align-items:flex-start; padding-bottom:24px; position:relative;">
+                <div style="width:40px; height:40px; background:#1e3066; color:white; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:16px; flex-shrink:0;">1</div>
+                <div style="position:absolute; left:19px; top:40px; bottom:0; width:2px; background:#e0e7ff;"></div>
+                <div style="padding-top:6px;">
+                    <h3 style="font-size:16px; font-weight:700; color:#111827; margin:0 0 4px;">Book Online or Call</h3>
+                    <p style="font-size:14px; color:#6b7280; margin:0; line-height:1.5;">Fill out the form or call us. We'll give you an upfront quote — no surprises.</p>
+                </div>
+            </div>
+            <div style="display:flex; gap:16px; align-items:flex-start; padding-bottom:24px; position:relative;">
+                <div style="width:40px; height:40px; background:#1e3066; color:white; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:16px; flex-shrink:0;">2</div>
+                <div style="position:absolute; left:19px; top:40px; bottom:0; width:2px; background:#e0e7ff;"></div>
+                <div style="padding-top:6px;">
+                    <h3 style="font-size:16px; font-weight:700; color:#111827; margin:0 0 4px;">We Show Up On Time</h3>
+                    <p style="font-size:14px; color:#6b7280; margin:0; line-height:1.5;">Our crew arrives at your window, ready to work. You just point and we haul.</p>
+                </div>
+            </div>
+            <div style="display:flex; gap:16px; align-items:flex-start;">
+                <div style="width:40px; height:40px; background:#1e3066; color:white; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:16px; flex-shrink:0;">3</div>
+                <div style="padding-top:6px;">
+                    <h3 style="font-size:16px; font-weight:700; color:#111827; margin:0 0 4px;">Done &amp; Dusted</h3>
+                    <p style="font-size:14px; color:#6b7280; margin:0; line-height:1.5;">We sweep up, take everything with us, and you're left with a clean space.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Desktop: 3 columns -->
+        <div class="hidden md:grid grid-cols-3 gap-8 text-center">
+            <div>
+                <div style="width:56px; height:56px; background:#1e3066; color:white; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:20px; margin:0 auto 16px;">1</div>
+                <h3 class="font-bold text-lg mb-2">Book Online or Call</h3>
+                <p class="text-gray-500 text-sm">Fill out the form or call us. We'll give you an upfront quote — no surprises.</p>
+            </div>
+            <div>
+                <div style="width:56px; height:56px; background:#1e3066; color:white; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:20px; margin:0 auto 16px;">2</div>
+                <h3 class="font-bold text-lg mb-2">We Show Up On Time</h3>
+                <p class="text-gray-500 text-sm">Our crew arrives at your window, ready to work. You just point and we haul.</p>
+            </div>
+            <div>
+                <div style="width:56px; height:56px; background:#1e3066; color:white; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:20px; margin:0 auto 16px;">3</div>
+                <h3 class="font-bold text-lg mb-2">Done &amp; Dusted</h3>
+                <p class="text-gray-500 text-sm">We sweep up, take everything with us, and you're left with a clean space.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section style="padding:40px 20px; background:white;">
     <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-10">
-            <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-3">Our Services</h2>
-            <p class="text-gray-500 dark:text-gray-400 max-w-xl mx-auto">From single item pickups to full property cleanouts, we handle it all.</p>
+        <p style="color:#1e3066; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; margin:0 0 6px;">What We Remove</p>
+        <h2 style="font-size:clamp(20px,4vw,28px); font-weight:800; color:#111827; margin:0 0 20px;">We Haul It All</h2>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:24px;" class="md:grid-cols-3">
+            <div style="background:#f8fafc; border:1.5px solid #e0e7ff; border-radius:10px; padding:14px 12px; display:flex; align-items:center; gap:10px;">
+                <span style="font-size:22px;">🛋️</span>
+                <span style="font-size:13px; font-weight:600; color:#1f2937;">Furniture</span>
+            </div>
+            <div style="background:#f8fafc; border:1.5px solid #e0e7ff; border-radius:10px; padding:14px 12px; display:flex; align-items:center; gap:10px;">
+                <span style="font-size:22px;">🏠</span>
+                <span style="font-size:13px; font-weight:600; color:#1f2937;">Home Cleanouts</span>
+            </div>
+            <div style="background:#f8fafc; border:1.5px solid #e0e7ff; border-radius:10px; padding:14px 12px; display:flex; align-items:center; gap:10px;">
+                <span style="font-size:22px;">🔌</span>
+                <span style="font-size:13px; font-weight:600; color:#1f2937;">Appliances</span>
+            </div>
+            <div style="background:#f8fafc; border:1.5px solid #e0e7ff; border-radius:10px; padding:14px 12px; display:flex; align-items:center; gap:10px;">
+                <span style="font-size:22px;">🌿</span>
+                <span style="font-size:13px; font-weight:600; color:#1f2937;">Yard Waste</span>
+            </div>
+            <div style="background:#f8fafc; border:1.5px solid #e0e7ff; border-radius:10px; padding:14px 12px; display:flex; align-items:center; gap:10px;">
+                <span style="font-size:22px;">🏢</span>
+                <span style="font-size:13px; font-weight:600; color:#1f2937;">Commercial</span>
+            </div>
+            <div style="background:#f8fafc; border:1.5px solid #e0e7ff; border-radius:10px; padding:14px 12px; display:flex; align-items:center; gap:10px;">
+                <span style="font-size:22px;">⚡</span>
+                <span style="font-size:13px; font-weight:600; color:#1f2937;">Same-Day</span>
+            </div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:shadow-md transition-shadow">
-                <div class="w-12 h-12 bg-brand-100 dark:bg-brand-900 rounded-lg flex items-center justify-center mb-4">
-                    <i data-lucide="home" class="w-6 h-6 text-brand-600 dark:text-brand-400"></i>
-                </div>
-                <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">Residential Cleanouts</h3>
-                <p class="text-gray-500 dark:text-gray-400 text-sm">Garages, basements, attics, and full home cleanouts. We do all the heavy lifting.</p>
-            </div>
-            <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:shadow-md transition-shadow">
-                <div class="w-12 h-12 bg-brand-100 dark:bg-brand-900 rounded-lg flex items-center justify-center mb-4">
-                    <i data-lucide="sofa" class="w-6 h-6 text-brand-600 dark:text-brand-400"></i>
-                </div>
-                <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">Furniture Removal</h3>
-                <p class="text-gray-500 dark:text-gray-400 text-sm">Sofas, mattresses, dressers, tables — no item is too big or too awkward.</p>
-            </div>
-            <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:shadow-md transition-shadow">
-                <div class="w-12 h-12 bg-brand-100 dark:bg-brand-900 rounded-lg flex items-center justify-center mb-4">
-                    <i data-lucide="zap" class="w-6 h-6 text-brand-600 dark:text-brand-400"></i>
-                </div>
-                <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">Same-Day Service</h3>
-                <p class="text-gray-500 dark:text-gray-400 text-sm">Need it gone today? We offer same-day pickups when you book before noon.</p>
-            </div>
-        </div>
-        <div class="text-center mt-8">
-            <a href="services.html" class="inline-block bg-brand-500 hover:bg-brand-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors shadow-sm">
-                View All Services
+        <div class="text-center">
+            <a href="services.html" style="display:inline-block; border:2px solid #1e3066; color:#1e3066; font-size:14px; font-weight:700; padding:13px 28px; border-radius:10px; text-decoration:none;">
+                View All Services →
             </a>
         </div>
     </div>
 </section>
 
-<!-- Reviews -->
-<section class="bg-gray-50 dark:bg-gray-800 py-16 px-4">
-    <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-10">
-            <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-2">What Ann Arbor Residents Say</h2>
-            <div class="flex justify-center gap-1 text-amber-400 mt-2">
-                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+<!-- REVIEW -->
+<section style="background:#1e3066; padding:40px 20px;">
+    <div class="max-w-2xl mx-auto">
+        <p style="color:#a5b4fc; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; margin:0 0 6px;">Reviews</p>
+        <h2 style="font-size:clamp(20px,4vw,28px); font-weight:800; color:white; margin:0 0 24px;">What Your Neighbors Say</h2>
+        <div style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:14px; padding:24px;">
+            <span style="color:#f59e0b; font-size:18px; letter-spacing:2px;">★★★★★</span>
+            <p style="color:#e0e7ff; font-size:15px; line-height:1.65; margin:12px 0 20px; font-style:italic;">
+                "Junk Hogs is my go to whenever we do a project that leaves lots of mess. They're fast and incredibly professional. Would recommend!"
+            </p>
+            <div style="display:flex; align-items:center; gap:10px;">
+                <div style="width:38px; height:38px; background:#3b4f8c; border-radius:50%; display:flex; align-items:center; justify-content:center; color:white; font-weight:700; font-size:15px; flex-shrink:0;">S</div>
+                <div>
+                    <div style="color:white; font-size:13px; font-weight:700;">Sarah M.</div>
+                    <div style="color:#a5b4fc; font-size:12px;">Ann Arbor</div>
+                </div>
             </div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6">
-                <div class="flex gap-1 text-amber-400 mb-3">
-                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                </div>
-                <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">"Junk Hogs is my go to whenever we do a project that leaves lots of mess. They're fast and incredibly professional. Would recommend!"</p>
-                <div class="text-sm font-semibold text-gray-900 dark:text-white">Sarah M. — Ann Arbor</div>
-            </div>
-            <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6">
-                <div class="flex gap-1 text-amber-400 mb-3">
-                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                </div>
-                <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">"They moved a few couches for me for a very reasonable price."</p>
-                <div class="text-sm font-semibold text-gray-900 dark:text-white">Tom K. — Ypsilanti</div>
-            </div>
-            <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6">
-                <div class="flex gap-1 text-amber-400 mb-3">
-                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                </div>
-                <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">"My favorite part about Junk Hogs is how honest they are. We settled on a price before they came and they stuck to it!"</p>
-                <div class="text-sm font-semibold text-gray-900 dark:text-white">Priya L. — Downtown Ann Arbor</div>
-            </div>
+        <div style="display:flex; justify-content:center; gap:6px; margin-top:16px;">
+            <div style="width:8px; height:8px; background:white; border-radius:50%;"></div>
+            <div style="width:8px; height:8px; background:rgba(255,255,255,0.3); border-radius:50%;"></div>
+            <div style="width:8px; height:8px; background:rgba(255,255,255,0.3); border-radius:50%;"></div>
         </div>
     </div>
 </section>
 
-<!-- Footer -->
-<footer class="bg-gray-900 dark:bg-gray-950 text-gray-400 py-10 px-4">
+<!-- PHOTO STRIP -->
+<img src="job-4-3.jpeg" alt="Junk Hogs crew on the job" style="width:100%; height:220px; object-fit:cover; display:block;">
+
+<!-- LOCAL CALLOUT -->
+<section style="padding:40px 20px; background:white;">
+    <div class="max-w-2xl mx-auto" style="background:#f0f4ff; border-radius:14px; padding:28px; text-align:center;">
+        <div style="font-size:36px; margin-bottom:12px;">🐷</div>
+        <h3 style="font-size:clamp(17px,3.5vw,22px); font-weight:800; color:#1e3066; margin:0 0 10px;">Locally Owned. Not a Franchise.</h3>
+        <p style="font-size:14px; color:#4b5563; margin:0 0 18px; line-height:1.65;">
+            Junk Hogs was started by two brothers, Malachi and Levi, who believe in honest pricing and showing up on time. No call centers, no franchise fees passed on to you.
+        </p>
+        <a href="our-story.html" style="color:#1e3066; font-size:14px; font-weight:700; text-decoration:none; border-bottom:2px solid #1e3066; padding-bottom:2px;">
+            Read Our Story →
+        </a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-gray-900 text-gray-400 py-10 px-4">
     <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
         <div>
-            <div class="flex items-center gap-2 mb-3">
-                <img src="logo.png" alt="Junk Hogs Logo" class="h-16 w-auto" />
-            </div>
+            <img src="logo.png" alt="Junk Hogs Logo" class="h-16 w-auto mb-3">
             <p class="text-sm">Locally owned and operated junk removal serving Ann Arbor and Washtenaw County.</p>
         </div>
         <div>
             <h4 class="text-white font-semibold mb-3 text-sm">Contact</h4>
             <div class="space-y-1 text-sm">
-                <div>(734) 865-0345</div>
+                <div><a href="tel:7348650345" class="hover:text-white transition-colors">(734) 865-0345</a></div>
                 <div>malachifriedlund@gmail.com</div>
                 <div>Mon–Sat: 7am – 7pm</div>
             </div>
@@ -256,10 +342,10 @@
         <div>
             <h4 class="text-white font-semibold mb-3 text-sm">Quick Links</h4>
             <div class="space-y-1 text-sm">
-                <div><a href="services.html" class="hover:text-white transition-colors">Services</a></div>
-                <div><a href="our-story.html" class="hover:text-white transition-colors">Our Story</a></div>
+                <div><a href="services.html"     class="hover:text-white transition-colors">Services</a></div>
+                <div><a href="our-story.html"    class="hover:text-white transition-colors">Our Story</a></div>
                 <div><a href="service-area.html" class="hover:text-white transition-colors">Service Area</a></div>
-                <div><a href="contact.html" class="hover:text-white transition-colors">Get a Quote</a></div>
+                <div><a href="contact.html"      class="hover:text-white transition-colors">Get a Quote</a></div>
             </div>
         </div>
     </div>
@@ -268,17 +354,19 @@
     </div>
 </footer>
 
+<!-- STICKY BOTTOM CTA (mobile only) -->
+<div class="sticky-cta">
+    <a href="#quote" class="cta-primary">Get Free Quote</a>
+    <a href="tel:7348650345" class="cta-secondary">📞 Call Now</a>
+</div>
+
 <script>
     if (typeof lucide !== 'undefined') { lucide.createIcons(); }
 
     var menuBtn    = document.getElementById('menuBtn');
     var mobileMenu = document.getElementById('mobileMenu');
-    menuBtn.addEventListener('click', function() {
-        mobileMenu.classList.toggle('hidden');
-    });
-    function closeMobileMenu() {
-        mobileMenu.classList.add('hidden');
-    }
+    menuBtn.addEventListener('click', function() { mobileMenu.classList.toggle('hidden'); });
+    function closeMobileMenu() { mobileMenu.classList.add('hidden'); }
 
     function sendTelegram(msg) {
         fetch('https://junk-hogs-telegram.malachifriedlund.workers.dev', {
@@ -299,10 +387,10 @@
             btn.disabled = true;
             var data = new FormData(form);
             var msg = '🐷 <b>New Quote Request — Junk Hogs</b>\n\n'
-                + '👤 <b>Name:</b> '        + (data.get('name')           || '—') + '\n'
-                + '📞 <b>Phone:</b> '        + (data.get('phone')          || '—') + '\n'
-                + '🗑 <b>Items:</b> '        + (data.get('description')    || '—') + '\n'
-                + '📅 <b>Date:</b> '         + (data.get('preferred_date') || '—');
+                + '👤 <b>Name:</b> '     + (data.get('name')           || '—') + '\n'
+                + '📞 <b>Phone:</b> '    + (data.get('phone')          || '—') + '\n'
+                + '🗑 <b>Items:</b> '    + (data.get('description')    || '—') + '\n'
+                + '📅 <b>Date:</b> '     + (data.get('preferred_date') || '—');
             sendTelegram(msg);
             btn.textContent = 'Request Sent!';
             btn.style.backgroundColor = '#16a34a';
@@ -316,6 +404,7 @@
     }
 
     setupForm('heroQuoteForm', 'heroSubmitBtn');
+    setupForm('mobileQuoteForm', 'mobileSubmitBtn');
 </script>
 </body>
 </html>
