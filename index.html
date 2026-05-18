@@ -374,28 +374,6 @@
     <a href="tel:7348650345" class="cta-secondary">📞 Call Now</a>
 </div>
 
-<!-- SPRING SALE POPUP -->
-<div id="promoModal" style="display:none; position:fixed; inset:0; z-index:200; background:rgba(0,0,0,0.6); align-items:center; justify-content:center; padding:20px;">
-    <div style="background:white; border-radius:20px; max-width:360px; width:100%; overflow:hidden; box-shadow:0 25px 60px rgba(0,0,0,0.35); position:relative;">
-        <!-- Red top banner -->
-        <div style="background:#dc2626; padding:14px 20px; text-align:center;">
-            <span style="color:white; font-size:13px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase;">🌸 Limited Time Spring Special 🌸</span>
-        </div>
-        <!-- Close button -->
-        <button onclick="closePromo()" style="position:absolute; top:10px; right:14px; background:rgba(255,255,255,0.25); border:none; color:white; font-size:20px; font-weight:700; cursor:pointer; width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; line-height:1;">✕</button>
-        <!-- Content -->
-        <div style="padding:28px 24px 24px; text-align:center;">
-            <img src="logo.png" alt="Junk Hogs" style="height:64px; width:auto; margin:0 auto 18px; display:block;">
-            <h2 style="font-size:26px; font-weight:900; color:#1e3066; margin:0 0 8px; line-height:1.15;">10% Off<br>Junk Removal</h2>
-            <p style="font-size:15px; color:#4b5563; margin:0 0 22px; line-height:1.55;">We Haul, You Save. Book this spring and get 10% off your total — no minimum, no hassle.</p>
-            <a href="contact.html" onclick="closePromo()" style="display:block; background:#dc2626; color:white; font-size:15px; font-weight:800; padding:15px; border-radius:10px; text-decoration:none; margin-bottom:12px;">
-                Claim My 10% Off →
-            </a>
-            <button onclick="closePromo()" style="background:none; border:none; color:#9ca3af; font-size:13px; cursor:pointer;">No thanks, I'll pay full price</button>
-        </div>
-    </div>
-</div>
-
 <script>
     if (typeof lucide !== 'undefined') { lucide.createIcons(); }
 
@@ -441,22 +419,6 @@
 
     setupForm('heroQuoteForm', 'heroSubmitBtn');
     setupForm('mobileQuoteForm', 'mobileSubmitBtn');
-
-    // Spring promo popup — show once per session
-    function closePromo() {
-        document.getElementById('promoModal').style.display = 'none';
-        sessionStorage.setItem('promoDismissed', '1');
-    }
-    if (!sessionStorage.getItem('promoDismissed')) {
-        setTimeout(function() {
-            var modal = document.getElementById('promoModal');
-            modal.style.display = 'flex';
-        }, 1800);
-    }
-    // Close on backdrop click
-    document.getElementById('promoModal').addEventListener('click', function(e) {
-        if (e.target === this) closePromo();
-    });
 </script>
 </body>
 </html>
