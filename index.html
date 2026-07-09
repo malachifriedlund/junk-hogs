@@ -11,40 +11,32 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Junk Hogs - Junk Removal - Ann Arbor, MI</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Junk Hogs — Junk Removal in Ann Arbor &amp; Washtenaw County, MI</title>
+    <meta name="description" content="Locally owned junk removal serving Ann Arbor and Washtenaw County. Same-day service, upfront pricing, licensed & insured. Get a free quote today.">
     <link rel="icon" type="image/png" href="logo.png">
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = { theme: { extend: {
+        colors: { navy: { 50:'#f0f4ff', 500:'#1e3066', 600:'#182857', 900:'#0e1634' }, amber:{400:'#fbbf24',500:'#f59e0b',600:'#d97706'} },
+        fontFamily: { sans: ['Inter','system-ui','sans-serif'] }
+      }}}
+    </script>
     <style>
-        /* Sticky bottom CTA — mobile only */
-        .sticky-cta {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
-            padding: 12px 16px;
-            background: white;
-            border-top: 1px solid #e5e7eb;
-            display: flex;
-            gap: 10px;
-        }
-        .sticky-cta a { flex: 1; text-align: center; text-decoration: none; font-weight: 700; font-size: 14px; padding: 14px; border-radius: 10px; }
-        .sticky-cta .cta-primary { background: #1e3066; color: white; }
-        .sticky-cta .cta-secondary { border: 2px solid #1e3066; color: #1e3066; background: white; }
-        @media (min-width: 768px) {
-            .sticky-cta { display: none; }
-        }
-        /* Bottom padding so content doesn't hide behind sticky bar on mobile */
-        @media (max-width: 767px) {
-            footer { padding-bottom: 100px !important; }
-        }
+      body{font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;}
+      @keyframes jh-ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+      .sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; z-index: 100; padding: 12px 16px; background: #0e1634; display: flex; gap: 10px; }
+      .sticky-cta a { flex: 1; text-align: center; text-decoration: none; font-weight: 800; font-size: 14px; padding: 14px; border-radius: 10px; }
+      .sticky-cta .cta-primary { background: #f59e0b; color: #0e1634; }
+      .sticky-cta .cta-secondary { border: 2px solid rgba(255,255,255,0.4); color: white; }
+      @media (min-width: 768px) { .sticky-cta { display: none; } }
+      @media (max-width: 767px) { footer { padding-bottom: 96px !important; } }
     </style>
 </head>
 <body class="bg-white text-gray-900">
 
 <!-- PROMO BANNER -->
-<style>@keyframes jh-ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }</style>
 <div style="background:#dc2626; color:white; padding:9px 0; overflow:hidden; white-space:nowrap; position:relative; z-index:60;">
     <div style="display:inline-flex; animation:jh-ticker 24s linear infinite; will-change:transform;">
         <span style="font-size:14px; font-weight:700; padding:0 52px;">🇺🇸 4th of July Sale: 15% off Junk Removal.</span>
@@ -59,364 +51,248 @@
 </div>
 
 <!-- NAVIGATION -->
-<nav class="bg-white border-b border-gray-200 sticky top-0 z-40 shadow-sm">
-    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-        <a href="index.html" style="text-decoration:none; font-size:21px; font-weight:900; color:#1e3066; letter-spacing:0.06em;">JUNK HOGS</a>
-        <div class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600">
-            <a href="index.html"        class="text-brand-500 font-semibold">Home</a>
-            <a href="services.html"     class="hover:text-brand-500 transition-colors">Services</a>
-            <a href="our-story.html"    class="hover:text-brand-500 transition-colors">Our Story</a>
-            <a href="service-area.html" class="hover:text-brand-500 transition-colors">Service Area</a>
-            <a href="contact.html"      class="hover:text-brand-500 transition-colors">Contact</a>
-        </div>
-        <a href="contact.html" class="hidden md:inline-block bg-brand-500 hover:bg-brand-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors shadow-sm">
-            Get Free Quote
-        </a>
-        <button id="menuBtn" class="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors">
-            <i data-lucide="menu" class="w-6 h-6"></i>
-        </button>
+<nav class="bg-navy-900 text-white sticky top-0 z-40">
+  <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="index.html" class="text-xl font-black tracking-wide">JUNK<span class="text-amber-400">HOGS</span></a>
+    <div class="hidden md:flex items-center gap-7 text-sm font-semibold text-white/70">
+      <a href="index.html" class="text-white">Home</a>
+      <a href="services.html" class="hover:text-white transition">Services</a>
+      <a href="our-story.html" class="hover:text-white transition">Our Story</a>
+      <a href="service-area.html" class="hover:text-white transition">Service Area</a>
+      <a href="contact.html" class="hover:text-white transition">Contact</a>
     </div>
-    <div id="mobileMenu" class="hidden md:hidden border-t border-gray-200 bg-white px-4 py-4 space-y-3">
-        <a href="index.html"        onclick="closeMobileMenu()" class="block text-sm font-medium text-gray-700 hover:text-brand-500 py-1">Home</a>
-        <a href="services.html"     onclick="closeMobileMenu()" class="block text-sm font-medium text-gray-700 hover:text-brand-500 py-1">Services</a>
-        <a href="our-story.html"    onclick="closeMobileMenu()" class="block text-sm font-medium text-gray-700 hover:text-brand-500 py-1">Our Story</a>
-        <a href="service-area.html" onclick="closeMobileMenu()" class="block text-sm font-medium text-gray-700 hover:text-brand-500 py-1">Service Area</a>
-        <a href="contact.html"      onclick="closeMobileMenu()" class="block text-sm font-medium text-gray-700 hover:text-brand-500 py-1">Contact</a>
-        <a href="contact.html"      onclick="closeMobileMenu()" class="block w-full text-center bg-brand-500 hover:bg-brand-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors">Get Free Quote</a>
-    </div>
+    <a href="tel:7348650345" class="hidden md:inline-block bg-amber-500 hover:bg-amber-600 text-navy-900 text-sm font-extrabold px-5 py-2.5 rounded-lg transition">📞 (734) 865-0345</a>
+    <button id="menuBtn" class="md:hidden p-2 text-white" aria-label="Menu">
+      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h18M4 13h18M4 19h18"/></svg>
+    </button>
+  </div>
+  <div id="mobileMenu" class="hidden md:hidden bg-navy-600 px-6 py-4 space-y-3">
+    <a href="index.html"        onclick="closeMobileMenu()" class="block text-sm font-semibold text-white py-1">Home</a>
+    <a href="services.html"     onclick="closeMobileMenu()" class="block text-sm font-semibold text-white/80 hover:text-white py-1">Services</a>
+    <a href="our-story.html"    onclick="closeMobileMenu()" class="block text-sm font-semibold text-white/80 hover:text-white py-1">Our Story</a>
+    <a href="service-area.html" onclick="closeMobileMenu()" class="block text-sm font-semibold text-white/80 hover:text-white py-1">Service Area</a>
+    <a href="contact.html"      onclick="closeMobileMenu()" class="block text-sm font-semibold text-white/80 hover:text-white py-1">Contact</a>
+    <a href="tel:7348650345"    onclick="closeMobileMenu()" class="block w-full text-center bg-amber-500 text-navy-900 px-4 py-2.5 rounded-lg text-sm font-extrabold">📞 (734) 865-0345</a>
+  </div>
 </nav>
 
 <!-- HERO -->
-<section style="position:relative; overflow:hidden; min-height:620px;">
-    <img src="hero-new.jpeg" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center;">
-    <div style="position:absolute; inset:0; background:linear-gradient(to bottom, rgba(14,22,52,0.55) 0%, rgba(14,22,52,0.88) 100%);"></div>
-    <div class="relative max-w-6xl mx-auto px-5 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
-        <!-- Left: headline + CTAs -->
-        <div>
-            <div style="display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.22); color:#c7d2fe; font-size:12px; font-weight:600; padding:4px 12px; border-radius:100px; margin-bottom:18px;">
-                📍 Ann Arbor &amp; Washtenaw County
-            </div>
-            <h1 style="color:white; font-size:clamp(32px,6vw,48px); font-weight:800; line-height:1.15; margin:0 0 16px;">
-                Junk Gone.<br>Same Day.
-            </h1>
-            <p style="color:#c7d2fe; font-size:16px; margin:0 0 28px; line-height:1.65;">
-                Locally owned. Upfront pricing. No surprises.
-            </p>
-            <!-- Buttons: side by side on all screen sizes -->
-            <div style="display:flex; gap:10px;">
-                <a href="#quote" style="flex:1; background:white; color:#1e3066; font-size:14px; font-weight:800; padding:14px 12px; border-radius:10px; text-align:center; text-decoration:none; box-shadow:0 2px 10px rgba(0,0,0,0.2);">
-                    Get a Free Quote
-                </a>
-                <a href="tel:7348650345" style="flex:1; border:2px solid rgba(255,255,255,0.6); color:white; font-size:14px; font-weight:700; padding:14px 12px; border-radius:10px; text-align:center; text-decoration:none; display:flex; align-items:center; justify-content:center; gap:6px;">
-                    <i data-lucide="phone" class="w-4 h-4"></i>(734) 865-0345
-                </a>
-            </div>
-            <div style="display:flex; align-items:center; gap:8px; margin-top:22px;">
-                <span style="color:#f59e0b; font-size:16px; letter-spacing:2px;">★★★★★</span>
-                <span style="color:#c7d2fe; font-size:13px;">5-star rated by your Washtenaw County neighbors</span>
-            </div>
-        </div>
-        <!-- Right: form (desktop only — hidden on mobile, shown in own section below) -->
-        <div class="hidden md:block bg-white rounded-xl shadow-lg p-6 text-gray-900">
-            <h2 class="text-lg font-bold mb-1">Get Your Free Quote</h2>
-            <p class="text-gray-500 text-sm mb-4">No obligation. Upfront pricing. Fast response.</p>
-            <form id="heroQuoteForm" class="space-y-3">
-                <div>
-                    <label class="block text-xs font-semibold text-gray-600 mb-1">Your Name</label>
-                    <input type="text" name="name" placeholder="John Smith" required class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500" />
-                </div>
-                <div>
-                    <label class="block text-xs font-semibold text-gray-600 mb-1">Phone Number</label>
-                    <input type="tel" name="phone" placeholder="(734) 555-0000" required class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500" />
-                </div>
-                <div>
-                    <label class="block text-xs font-semibold text-gray-600 mb-1">What needs to go?</label>
-                    <textarea rows="3" name="description" placeholder="Old couch, broken appliances, garage cleanout..." required class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 resize-none"></textarea>
-                </div>
-                <div>
-                    <label class="block text-xs font-semibold text-gray-600 mb-1">Preferred Date</label>
-                    <input type="date" name="preferred_date" class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500" />
-                </div>
-                <button type="submit" id="heroSubmitBtn" class="w-full bg-brand-500 hover:bg-brand-600 text-white py-3 rounded-lg font-bold transition-colors shadow-sm">
-                    Request My Free Quote
-                </button>
-                <div style="text-align:center; padding-top:4px;">
-                    <span style="color:#f59e0b; font-size:18px; letter-spacing:2px;">★★★★★</span>
-                    <p class="text-xs text-gray-500 mt-1">5-Star Rated · Reviewed by your neighbors</p>
-                </div>
-            </form>
-        </div>
+<header class="relative bg-navy-900 text-white overflow-hidden">
+  <img src="hero-new.jpeg" alt="" class="absolute inset-0 w-full h-full object-cover opacity-25">
+  <div class="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-900/85 to-navy-900/40"></div>
+  <div class="relative max-w-6xl mx-auto px-6 py-16 md:py-24 grid md:grid-cols-5 gap-10 md:gap-12 items-center">
+    <!-- Left: headline + CTAs -->
+    <div class="md:col-span-3">
+      <div class="inline-block bg-amber-500 text-navy-900 text-xs font-extrabold uppercase tracking-wider px-4 py-1.5 rounded mb-6">
+        Ann Arbor &amp; Washtenaw County
+      </div>
+      <h1 class="text-5xl md:text-7xl font-black leading-[0.95] tracking-tight">
+        JUNK GONE.<br><span class="text-amber-400">SAME DAY.</span>
+      </h1>
+      <p class="mt-6 text-lg md:text-xl text-white/70 max-w-md">Locally owned. Upfront pricing. No surprises — we haul it all.</p>
+      <div class="mt-8 flex flex-col sm:flex-row gap-4">
+        <a href="#quote" class="bg-amber-500 hover:bg-amber-600 text-navy-900 text-lg font-extrabold px-9 py-4 rounded-lg transition text-center">Get a Free Quote →</a>
+        <a href="tel:7348650345" class="border-2 border-white/30 hover:border-white text-white text-lg font-bold px-9 py-4 rounded-lg transition text-center">Call Now</a>
+      </div>
+      <div class="mt-8 flex items-center gap-3">
+        <span class="text-amber-400 text-xl tracking-widest">★★★★★</span>
+        <span class="text-white/60 text-sm font-medium">5-star rated by your Washtenaw County neighbors</span>
+      </div>
     </div>
-</section>
-
-<!-- TRUST BAR -->
-<section style="background:#f8fafc; border-bottom:1px solid #e5e7eb; padding:16px 20px;">
-    <div class="max-w-6xl mx-auto" style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
-        <div style="display:flex; align-items:center; gap:8px; color:#374151; font-size:13px; font-weight:500;">
-            <span style="width:32px; height:32px; background:#e0e7ff; border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">🛡️</span>
-            Licensed &amp; Insured
+    <!-- Right: quote form -->
+    <div id="quote" class="md:col-span-2 bg-white rounded-2xl shadow-2xl p-5 md:p-6 text-gray-900">
+      <h2 class="text-lg font-black mb-0.5">Get Your Free Quote</h2>
+      <p class="text-gray-500 text-xs mb-4">No obligation. Upfront pricing. Fast response.</p>
+      <form id="quoteForm" class="space-y-2.5">
+        <div>
+          <label class="block text-xs font-semibold text-gray-600 mb-1">Your Name</label>
+          <input type="text" name="name" placeholder="John Smith" required class="w-full border-2 border-gray-100 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-navy-500">
         </div>
-        <div style="display:flex; align-items:center; gap:8px; color:#374151; font-size:13px; font-weight:500;">
-            <span style="width:32px; height:32px; background:#e0e7ff; border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">⚡</span>
-            Same-Day Available
+        <div>
+          <label class="block text-xs font-semibold text-gray-600 mb-1">Phone Number</label>
+          <input type="tel" name="phone" placeholder="(734) 555-0000" required class="w-full border-2 border-gray-100 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-navy-500">
         </div>
-        <div style="display:flex; align-items:center; gap:8px; color:#374151; font-size:13px; font-weight:500;">
-            <span style="width:32px; height:32px; background:#e0e7ff; border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">💰</span>
-            Upfront Pricing
+        <div>
+          <label class="block text-xs font-semibold text-gray-600 mb-1">What needs to go?</label>
+          <textarea rows="2" name="description" placeholder="Old couch, broken appliances, garage cleanout..." required class="w-full border-2 border-gray-100 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-navy-500 resize-none"></textarea>
         </div>
-        <div style="display:flex; align-items:center; gap:8px; color:#374151; font-size:13px; font-weight:500;">
-            <span style="width:32px; height:32px; background:#e0e7ff; border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">🌿</span>
-            Eco-Friendly
+        <div>
+          <label class="block text-xs font-semibold text-gray-600 mb-1">Preferred Date</label>
+          <input type="date" name="preferred_date" class="w-full border-2 border-gray-100 rounded-lg px-3 py-2 text-sm text-gray-500 focus:outline-none focus:border-navy-500">
         </div>
+        <button type="submit" id="quoteSubmitBtn" class="w-full bg-navy-900 hover:bg-navy-600 text-white font-extrabold py-3 rounded-lg transition">Request My Free Quote</button>
+        <div class="text-center pt-0.5">
+          <span class="text-amber-500 tracking-widest">★★★★★</span>
+          <p class="text-xs text-gray-500 mt-0.5">5-Star Rated · Reviewed by your neighbors</p>
+        </div>
+      </form>
     </div>
-</section>
+  </div>
+</header>
 
-<!-- MOBILE QUOTE FORM (hidden on desktop — desktop sees form in hero) -->
-<section id="quote" class="md:hidden" style="padding:36px 20px; background:white;">
-    <p style="color:#1e3066; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; margin:0 0 6px;">Get Started</p>
-    <h2 style="font-size:22px; font-weight:800; color:#111827; margin:0 0 6px;">Get Your Free Quote</h2>
-    <p style="font-size:14px; color:#6b7280; margin:0 0 20px;">No obligation. We respond within the hour.</p>
-    <form id="mobileQuoteForm" style="display:flex; flex-direction:column; gap:14px;">
-        <div>
-            <label style="display:block; font-size:12px; font-weight:600; color:#374151; margin-bottom:5px;">Your Name *</label>
-            <input type="text" name="name" placeholder="Jane Smith" required style="width:100%; border:1.5px solid #e5e7eb; border-radius:10px; padding:12px 14px; font-size:15px; color:#111827; box-sizing:border-box; outline:none;" />
-        </div>
-        <div>
-            <label style="display:block; font-size:12px; font-weight:600; color:#374151; margin-bottom:5px;">Phone Number *</label>
-            <input type="tel" name="phone" placeholder="(734) 555-0000" required style="width:100%; border:1.5px solid #e5e7eb; border-radius:10px; padding:12px 14px; font-size:15px; color:#111827; box-sizing:border-box; outline:none;" />
-        </div>
-        <div>
-            <label style="display:block; font-size:12px; font-weight:600; color:#374151; margin-bottom:5px;">What needs to go? *</label>
-            <textarea rows="3" name="description" placeholder="Old couch, broken appliances, garage cleanout..." required style="width:100%; border:1.5px solid #e5e7eb; border-radius:10px; padding:12px 14px; font-size:15px; color:#111827; box-sizing:border-box; resize:none; outline:none;"></textarea>
-        </div>
-        <div>
-            <label style="display:block; font-size:12px; font-weight:600; color:#374151; margin-bottom:5px;">Preferred Date</label>
-            <input type="date" name="preferred_date" style="width:100%; border:1.5px solid #e5e7eb; border-radius:10px; padding:12px 14px; font-size:15px; color:#6b7280; box-sizing:border-box; outline:none;" />
-        </div>
-        <button type="submit" id="mobileSubmitBtn" style="background:#1e3066; color:white; font-size:16px; font-weight:800; padding:16px; border-radius:10px; border:none; cursor:pointer; width:100%;">
-            Request My Free Quote
-        </button>
-        <div style="text-align:center; padding-top:4px;">
-            <span style="color:#f59e0b; font-size:18px; letter-spacing:2px;">★★★★★</span>
-            <p style="color:#6b7280; font-size:12px; margin:4px 0 0;">5-Star Rated · Reviewed by your neighbors</p>
-        </div>
-    </form>
-</section>
-
-<!-- HOW IT WORKS -->
-<section style="background:#f8fafc; padding:40px 20px;">
-    <div class="max-w-4xl mx-auto">
-        <p style="color:#1e3066; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; margin:0 0 6px;">Simple Process</p>
-        <h2 style="font-size:clamp(20px,4vw,28px); font-weight:800; color:#111827; margin:0 0 28px;">How It Works</h2>
-        <!-- Mobile: vertical timeline. Desktop: 3 columns -->
-        <div class="md:hidden" style="display:flex; flex-direction:column; gap:0;">
-            <div style="display:flex; gap:16px; align-items:flex-start; padding-bottom:24px; position:relative;">
-                <div style="width:40px; height:40px; background:#1e3066; color:white; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:16px; flex-shrink:0;">1</div>
-                <div style="position:absolute; left:19px; top:40px; bottom:0; width:2px; background:#e0e7ff;"></div>
-                <div style="padding-top:6px;">
-                    <h3 style="font-size:16px; font-weight:700; color:#111827; margin:0 0 4px;">Book Online or Call</h3>
-                    <p style="font-size:14px; color:#6b7280; margin:0; line-height:1.5;">Fill out the form or call us. We'll give you an upfront quote — no surprises.</p>
-                </div>
-            </div>
-            <div style="display:flex; gap:16px; align-items:flex-start; padding-bottom:24px; position:relative;">
-                <div style="width:40px; height:40px; background:#1e3066; color:white; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:16px; flex-shrink:0;">2</div>
-                <div style="position:absolute; left:19px; top:40px; bottom:0; width:2px; background:#e0e7ff;"></div>
-                <div style="padding-top:6px;">
-                    <h3 style="font-size:16px; font-weight:700; color:#111827; margin:0 0 4px;">We Show Up On Time</h3>
-                    <p style="font-size:14px; color:#6b7280; margin:0; line-height:1.5;">Our crew arrives at your window, ready to work. You just point and we haul.</p>
-                </div>
-            </div>
-            <div style="display:flex; gap:16px; align-items:flex-start;">
-                <div style="width:40px; height:40px; background:#1e3066; color:white; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:16px; flex-shrink:0;">3</div>
-                <div style="padding-top:6px;">
-                    <h3 style="font-size:16px; font-weight:700; color:#111827; margin:0 0 4px;">Done &amp; Dusted</h3>
-                    <p style="font-size:14px; color:#6b7280; margin:0; line-height:1.5;">We sweep up, take everything with us, and you're left with a clean space.</p>
-                </div>
-            </div>
-        </div>
-        <!-- Desktop: 3 columns -->
-        <div class="hidden md:grid grid-cols-3 gap-8 text-center">
-            <div>
-                <div style="width:56px; height:56px; background:#1e3066; color:white; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:20px; margin:0 auto 16px;">1</div>
-                <h3 class="font-bold text-lg mb-2">Book Online or Call</h3>
-                <p class="text-gray-500 text-sm">Fill out the form or call us. We'll give you an upfront quote — no surprises.</p>
-            </div>
-            <div>
-                <div style="width:56px; height:56px; background:#1e3066; color:white; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:20px; margin:0 auto 16px;">2</div>
-                <h3 class="font-bold text-lg mb-2">We Show Up On Time</h3>
-                <p class="text-gray-500 text-sm">Our crew arrives at your window, ready to work. You just point and we haul.</p>
-            </div>
-            <div>
-                <div style="width:56px; height:56px; background:#1e3066; color:white; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:20px; margin:0 auto 16px;">3</div>
-                <h3 class="font-bold text-lg mb-2">Done &amp; Dusted</h3>
-                <p class="text-gray-500 text-sm">We sweep up, take everything with us, and you're left with a clean space.</p>
-            </div>
-        </div>
-    </div>
+<!-- STAT STRIP -->
+<section class="bg-amber-500">
+  <div class="max-w-6xl mx-auto px-6 py-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-navy-900 text-center">
+    <div><div class="text-2xl md:text-3xl font-black">Same-Day</div><div class="text-sm font-bold opacity-70">Availability</div></div>
+    <div><div class="text-2xl md:text-3xl font-black">100%</div><div class="text-sm font-bold opacity-70">Upfront Pricing</div></div>
+    <div><div class="text-2xl md:text-3xl font-black">Licensed</div><div class="text-sm font-bold opacity-70">&amp; Insured</div></div>
+    <div><div class="text-2xl md:text-3xl font-black">5★</div><div class="text-sm font-bold opacity-70">Neighbor Rated</div></div>
+  </div>
 </section>
 
 <!-- SERVICES -->
-<section style="padding:40px 20px; background:white;">
-    <div class="max-w-6xl mx-auto">
-        <p style="color:#1e3066; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; margin:0 0 6px;">What We Remove</p>
-        <h2 style="font-size:clamp(20px,4vw,28px); font-weight:800; color:#111827; margin:0 0 20px;">We Haul It All</h2>
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:24px;" class="md:grid-cols-3">
-            <div style="background:#f8fafc; border:1.5px solid #e0e7ff; border-radius:10px; padding:14px 12px; display:flex; align-items:center; gap:10px;">
-                <span style="font-size:22px;">🛋️</span>
-                <span style="font-size:13px; font-weight:600; color:#1f2937;">Furniture</span>
-            </div>
-            <div style="background:#f8fafc; border:1.5px solid #e0e7ff; border-radius:10px; padding:14px 12px; display:flex; align-items:center; gap:10px;">
-                <span style="font-size:22px;">🏠</span>
-                <span style="font-size:13px; font-weight:600; color:#1f2937;">Home Cleanouts</span>
-            </div>
-            <div style="background:#f8fafc; border:1.5px solid #e0e7ff; border-radius:10px; padding:14px 12px; display:flex; align-items:center; gap:10px;">
-                <span style="font-size:22px;">🔌</span>
-                <span style="font-size:13px; font-weight:600; color:#1f2937;">Appliances</span>
-            </div>
-            <div style="background:#f8fafc; border:1.5px solid #e0e7ff; border-radius:10px; padding:14px 12px; display:flex; align-items:center; gap:10px;">
-                <span style="font-size:22px;">🌿</span>
-                <span style="font-size:13px; font-weight:600; color:#1f2937;">Yard Waste</span>
-            </div>
-            <div style="background:#f8fafc; border:1.5px solid #e0e7ff; border-radius:10px; padding:14px 12px; display:flex; align-items:center; gap:10px;">
-                <span style="font-size:22px;">🏢</span>
-                <span style="font-size:13px; font-weight:600; color:#1f2937;">Commercial</span>
-            </div>
-            <div style="background:#f8fafc; border:1.5px solid #e0e7ff; border-radius:10px; padding:14px 12px; display:flex; align-items:center; gap:10px;">
-                <span style="font-size:22px;">⚡</span>
-                <span style="font-size:13px; font-weight:600; color:#1f2937;">Same-Day</span>
-            </div>
-        </div>
-        <div class="text-center">
-            <a href="services.html" style="display:inline-block; border:2px solid #1e3066; color:#1e3066; font-size:14px; font-weight:700; padding:13px 28px; border-radius:10px; text-decoration:none;">
-                View All Services →
-            </a>
-        </div>
+<section class="max-w-6xl mx-auto px-6 py-20 md:py-24">
+  <div class="flex items-end justify-between mb-12 flex-wrap gap-4">
+    <div>
+      <p class="text-amber-600 font-extrabold uppercase tracking-wider text-sm mb-2">What we remove</p>
+      <h2 class="text-4xl md:text-5xl font-black">We haul it all.</h2>
     </div>
+    <a href="services.html" class="text-navy-500 font-bold border-b-2 border-amber-500 pb-1">View all services →</a>
+  </div>
+  <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-5">
+    <div class="bg-navy-900 text-white rounded-2xl p-6 md:p-8 hover:bg-navy-600 transition"><div class="text-4xl mb-4">🛋️</div><div class="text-lg md:text-xl font-bold">Furniture</div><div class="text-white/50 text-sm mt-1">Couches, beds, tables</div></div>
+    <div class="bg-navy-900 text-white rounded-2xl p-6 md:p-8 hover:bg-navy-600 transition"><div class="text-4xl mb-4">🏠</div><div class="text-lg md:text-xl font-bold">Home Cleanouts</div><div class="text-white/50 text-sm mt-1">Garages, basements, estates</div></div>
+    <div class="bg-navy-900 text-white rounded-2xl p-6 md:p-8 hover:bg-navy-600 transition"><div class="text-4xl mb-4">🔌</div><div class="text-lg md:text-xl font-bold">Appliances</div><div class="text-white/50 text-sm mt-1">Fridges, washers, dryers</div></div>
+    <div class="bg-navy-900 text-white rounded-2xl p-6 md:p-8 hover:bg-navy-600 transition"><div class="text-4xl mb-4">🌿</div><div class="text-lg md:text-xl font-bold">Yard Waste</div><div class="text-white/50 text-sm mt-1">Brush, branches, debris</div></div>
+    <div class="bg-navy-900 text-white rounded-2xl p-6 md:p-8 hover:bg-navy-600 transition"><div class="text-4xl mb-4">🏢</div><div class="text-lg md:text-xl font-bold">Commercial</div><div class="text-white/50 text-sm mt-1">Offices &amp; retail</div></div>
+    <div class="bg-amber-500 text-navy-900 rounded-2xl p-6 md:p-8 hover:bg-amber-600 transition"><div class="text-4xl mb-4">⚡</div><div class="text-lg md:text-xl font-black">Same-Day</div><div class="text-navy-900/60 text-sm mt-1 font-semibold">Need it gone today?</div></div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="bg-gray-50 py-20 md:py-24">
+  <div class="max-w-5xl mx-auto px-6">
+    <h2 class="text-4xl md:text-5xl font-black text-center mb-16">How it works</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white rounded-2xl p-8 border-t-4 border-amber-500">
+        <div class="text-5xl font-black text-amber-500 mb-4">01</div>
+        <h3 class="text-xl font-bold mb-2">Book or call</h3>
+        <p class="text-gray-500">Tell us what needs to go and we give you an upfront quote — no surprises.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-8 border-t-4 border-amber-500">
+        <div class="text-5xl font-black text-amber-500 mb-4">02</div>
+        <h3 class="text-xl font-bold mb-2">We show up</h3>
+        <p class="text-gray-500">Our crew arrives on time, ready to work. You just point and we haul.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-8 border-t-4 border-amber-500">
+        <div class="text-5xl font-black text-amber-500 mb-4">03</div>
+        <h3 class="text-xl font-bold mb-2">Done &amp; dusted</h3>
+        <p class="text-gray-500">We sweep up, take everything with us, and leave you a clean space.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- REVIEW -->
-<section style="background:#1e3066; padding:40px 20px;">
-    <div class="max-w-2xl mx-auto">
-        <p style="color:#a5b4fc; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; margin:0 0 6px;">Reviews</p>
-        <h2 style="font-size:clamp(20px,4vw,28px); font-weight:800; color:white; margin:0 0 24px;">What Your Neighbors Say</h2>
-        <div style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:14px; padding:24px;">
-            <span style="color:#f59e0b; font-size:18px; letter-spacing:2px;">★★★★★</span>
-            <p style="color:#e0e7ff; font-size:15px; line-height:1.65; margin:12px 0 20px; font-style:italic;">
-                "Junk Hogs is my go to whenever we do a project that leaves lots of mess. They're fast and incredibly professional. Would recommend!"
-            </p>
-            <div style="display:flex; align-items:center; gap:10px;">
-                <div style="width:38px; height:38px; background:#3b4f8c; border-radius:50%; display:flex; align-items:center; justify-content:center; color:white; font-weight:700; font-size:15px; flex-shrink:0;">S</div>
-                <div>
-                    <div style="color:white; font-size:13px; font-weight:700;">Sarah M.</div>
-                    <div style="color:#a5b4fc; font-size:12px;">Ann Arbor</div>
-                </div>
-            </div>
-        </div>
-        <div style="display:flex; justify-content:center; gap:6px; margin-top:16px;">
-            <div style="width:8px; height:8px; background:white; border-radius:50%;"></div>
-            <div style="width:8px; height:8px; background:rgba(255,255,255,0.3); border-radius:50%;"></div>
-            <div style="width:8px; height:8px; background:rgba(255,255,255,0.3); border-radius:50%;"></div>
-        </div>
-    </div>
+<section class="bg-navy-900 text-white py-20 md:py-24">
+  <div class="max-w-3xl mx-auto px-6 text-center">
+    <span class="text-amber-400 text-3xl tracking-widest">★★★★★</span>
+    <p class="mt-8 text-2xl md:text-3xl font-bold leading-snug">
+      "Junk Hogs is my go-to whenever we do a project that leaves lots of mess. They're fast and incredibly professional."
+    </p>
+    <p class="mt-8 text-amber-400 font-bold">SARAH M. <span class="text-white/50 font-normal">· Ann Arbor</span></p>
+  </div>
 </section>
 
-<!-- PHOTO STRIP -->
-<img src="job-4-3.jpeg" alt="Junk Hogs crew on the job" style="width:100%; height:220px; object-fit:cover; display:block;">
+<!-- LOCAL + CTA -->
+<section class="max-w-6xl mx-auto px-6 py-20 md:py-24 grid md:grid-cols-2 gap-12 items-center">
+  <img src="job-4-3.jpeg" alt="Junk Hogs crew on the job" class="w-full h-80 object-cover rounded-3xl">
+  <div>
+    <h2 class="text-4xl font-black mb-4">Two brothers.<br>One promise.</h2>
+    <p class="text-gray-500 text-lg leading-relaxed mb-6">
+      Junk Hogs was started by Malachi and Levi — two brothers who believe in honest pricing and showing up on time. No call centers, no franchise fees passed on to you.
+    </p>
+    <a href="our-story.html" class="inline-block bg-navy-500 hover:bg-navy-600 text-white font-extrabold px-8 py-4 rounded-lg transition">Read our story →</a>
+  </div>
+</section>
 
-<!-- LOCAL CALLOUT -->
-<section style="padding:40px 20px; background:white;">
-    <div class="max-w-2xl mx-auto" style="background:#f0f4ff; border-radius:14px; padding:28px; text-align:center;">
-        <h3 style="font-size:clamp(17px,3.5vw,22px); font-weight:800; color:#1e3066; margin:0 0 10px;">Locally Owned. Not a Franchise.</h3>
-        <p style="font-size:14px; color:#4b5563; margin:0 0 18px; line-height:1.65;">
-            Junk Hogs was started by two brothers, Malachi and Levi, who believe in honest pricing and showing up on time. No call centers, no franchise fees passed on to you.
-        </p>
-        <a href="our-story.html" style="color:#1e3066; font-size:14px; font-weight:700; text-decoration:none; border-bottom:2px solid #1e3066; padding-bottom:2px;">
-            Read Our Story →
-        </a>
+<!-- FINAL CTA -->
+<section class="bg-amber-500 py-16 md:py-20">
+  <div class="max-w-3xl mx-auto px-6 text-center">
+    <h2 class="text-3xl md:text-4xl font-black text-navy-900 mb-3">Ready to clear the clutter?</h2>
+    <p class="text-navy-900/70 font-semibold mb-8">No obligation. We respond within the hour.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="#quote" class="inline-block bg-navy-900 hover:bg-navy-600 text-white px-9 py-4 rounded-lg font-extrabold text-lg transition">Get a Free Quote →</a>
+      <a href="tel:7348650345" class="inline-block border-2 border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-white px-9 py-4 rounded-lg font-extrabold text-lg transition">📞 (734) 865-0345</a>
     </div>
+  </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="bg-gray-900 text-gray-400 py-10 px-4">
-    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
-        <div>
-            <img src="logo.png" alt="Junk Hogs Logo" class="h-16 w-auto mb-3">
-            <p class="text-sm">Locally owned and operated junk removal serving Ann Arbor and Washtenaw County.</p>
-        </div>
-        <div>
-            <h4 class="text-white font-semibold mb-3 text-sm">Contact</h4>
-            <div class="space-y-1 text-sm">
-                <div><a href="tel:7348650345" class="hover:text-white transition-colors">(734) 865-0345</a></div>
-                <div>malachifriedlund@gmail.com</div>
-                <div>Mon–Sat: 7am – 7pm</div>
-            </div>
-        </div>
-        <div>
-            <h4 class="text-white font-semibold mb-3 text-sm">Quick Links</h4>
-            <div class="space-y-1 text-sm">
-                <div><a href="services.html"     class="hover:text-white transition-colors">Services</a></div>
-                <div><a href="our-story.html"    class="hover:text-white transition-colors">Our Story</a></div>
-                <div><a href="service-area.html" class="hover:text-white transition-colors">Service Area</a></div>
-                <div><a href="contact.html"      class="hover:text-white transition-colors">Get a Quote</a></div>
-            </div>
-        </div>
+<footer class="bg-navy-900 text-white/60 py-12">
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+    <div>
+      <div class="text-2xl font-black text-white mb-3">JUNK<span class="text-amber-400">HOGS</span></div>
+      <p class="text-sm">Locally owned and operated junk removal serving Ann Arbor and Washtenaw County.</p>
     </div>
-    <div class="max-w-6xl mx-auto mt-8 pt-6 border-t border-gray-800 text-center text-xs">
-        &copy; 2026 Junk Hogs. All rights reserved. Licensed &amp; Insured in Michigan.
+    <div>
+      <h4 class="text-white font-bold mb-3 text-sm uppercase tracking-wider">Contact</h4>
+      <div class="space-y-1 text-sm">
+        <div><a href="tel:7348650345" class="hover:text-white transition">(734) 865-0345</a></div>
+        <div>malachifriedlund@gmail.com</div>
+        <div>Mon–Sat: 7am – 7pm</div>
+      </div>
     </div>
+    <div>
+      <h4 class="text-white font-bold mb-3 text-sm uppercase tracking-wider">Quick Links</h4>
+      <div class="space-y-1 text-sm">
+        <div><a href="services.html"     class="hover:text-white transition">Services</a></div>
+        <div><a href="our-story.html"    class="hover:text-white transition">Our Story</a></div>
+        <div><a href="service-area.html" class="hover:text-white transition">Service Area</a></div>
+        <div><a href="contact.html"      class="hover:text-white transition">Get a Quote</a></div>
+      </div>
+    </div>
+  </div>
+  <div class="max-w-6xl mx-auto mt-8 pt-6 border-t border-white/10 text-center text-xs px-6">
+    &copy; 2026 Junk Hogs. All rights reserved. Licensed &amp; Insured in Michigan.
+  </div>
 </footer>
 
 <!-- STICKY BOTTOM CTA (mobile only) -->
 <div class="sticky-cta">
-    <a href="#quote" class="cta-primary">Get Free Quote</a>
-    <a href="tel:7348650345" class="cta-secondary">📞 Call Now</a>
+  <a href="#quote" class="cta-primary">Get Free Quote</a>
+  <a href="tel:7348650345" class="cta-secondary">📞 Call Now</a>
 </div>
 
 <script>
-    if (typeof lucide !== 'undefined') { lucide.createIcons(); }
+  var menuBtn = document.getElementById('menuBtn');
+  var mobileMenu = document.getElementById('mobileMenu');
+  if (menuBtn) menuBtn.addEventListener('click', function(){ mobileMenu.classList.toggle('hidden'); });
+  function closeMobileMenu(){ mobileMenu.classList.add('hidden'); }
 
-    var menuBtn    = document.getElementById('menuBtn');
-    var mobileMenu = document.getElementById('mobileMenu');
-    menuBtn.addEventListener('click', function() { mobileMenu.classList.toggle('hidden'); });
-    function closeMobileMenu() { mobileMenu.classList.add('hidden'); }
+  function sendTelegram(msg) {
+    fetch('https://junk-hogs-telegram.malachifriedlund.workers.dev', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: msg })
+    });
+  }
 
-    function sendTelegram(msg) {
-        fetch('https://junk-hogs-telegram.malachifriedlund.workers.dev', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ message: msg })
-        });
-    }
-
-    function setupForm(formId, btnId) {
-        var form = document.getElementById(formId);
-        var btn  = document.getElementById(btnId);
-        if (!form || !btn) return;
-        var origText = btn.textContent;
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            btn.textContent = 'Sending…';
-            btn.disabled = true;
-            var data = new FormData(form);
-            var msg = '🐷 <b>New Quote Request — Junk Hogs</b>\n\n'
-                + '👤 <b>Name:</b> '     + (data.get('name')           || '—') + '\n'
-                + '📞 <b>Phone:</b> '    + (data.get('phone')          || '—') + '\n'
-                + '🗑 <b>Items:</b> '    + (data.get('description')    || '—') + '\n'
-                + '📅 <b>Date:</b> '     + (data.get('preferred_date') || '—');
-            sendTelegram(msg);
-            btn.textContent = 'Request Sent!';
-            btn.style.backgroundColor = '#16a34a';
-            form.reset();
-            setTimeout(function() {
-                btn.textContent = origText;
-                btn.style.backgroundColor = '';
-                btn.disabled = false;
-            }, 4000);
-        });
-    }
-
-    setupForm('heroQuoteForm', 'heroSubmitBtn');
-    setupForm('mobileQuoteForm', 'mobileSubmitBtn');
+  var form = document.getElementById('quoteForm');
+  var btn  = document.getElementById('quoteSubmitBtn');
+  if (form && btn) {
+    var origText = btn.textContent;
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+      var data = new FormData(form);
+      var msg = '🐷 <b>New Quote Request — Junk Hogs</b>\n\n'
+        + '👤 <b>Name:</b> '  + (data.get('name')           || '—') + '\n'
+        + '📞 <b>Phone:</b> ' + (data.get('phone')          || '—') + '\n'
+        + '🗑 <b>Items:</b> ' + (data.get('description')    || '—') + '\n'
+        + '📅 <b>Date:</b> '  + (data.get('preferred_date') || '—');
+      sendTelegram(msg);
+      btn.textContent = 'Request Sent!';
+      btn.style.backgroundColor = '#16a34a';
+      form.reset();
+      setTimeout(function() {
+        btn.textContent = origText;
+        btn.style.backgroundColor = '';
+        btn.disabled = false;
+      }, 4000);
+    });
+  }
 </script>
 </body>
 </html>

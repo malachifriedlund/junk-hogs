@@ -11,15 +11,32 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Junk Hogs</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Get a Free Quote — Junk Hogs</title>
+    <meta name="description" content="Request a free, no-obligation junk removal quote from Junk Hogs. Upfront pricing, same-day service, serving Ann Arbor & Washtenaw County.">
     <link rel="icon" type="image/png" href="logo.png">
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = { theme: { extend: {
+        colors: { navy: { 50:'#f0f4ff', 500:'#1e3066', 600:'#182857', 900:'#0e1634' }, amber:{400:'#fbbf24',500:'#f59e0b',600:'#d97706'} },
+        fontFamily: { sans: ['Inter','system-ui','sans-serif'] }
+      }}}
+    </script>
+    <style>
+      body{font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;}
+      @keyframes jh-ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+      .sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; z-index: 100; padding: 12px 16px; background: #0e1634; display: flex; gap: 10px; }
+      .sticky-cta a { flex: 1; text-align: center; text-decoration: none; font-weight: 800; font-size: 14px; padding: 14px; border-radius: 10px; }
+      .sticky-cta .cta-primary { background: #f59e0b; color: #0e1634; }
+      .sticky-cta .cta-secondary { border: 2px solid rgba(255,255,255,0.4); color: white; }
+      @media (min-width: 768px) { .sticky-cta { display: none; } }
+      @media (max-width: 767px) { footer { padding-bottom: 96px !important; } }
+    </style>
 </head>
-<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+<body class="bg-white text-gray-900">
 
 <!-- PROMO BANNER -->
-<style>@keyframes jh-ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }</style>
 <div style="background:#dc2626; color:white; padding:9px 0; overflow:hidden; white-space:nowrap; position:relative; z-index:60;">
     <div style="display:inline-flex; animation:jh-ticker 24s linear infinite; will-change:transform;">
         <span style="font-size:14px; font-weight:700; padding:0 52px;">🇺🇸 4th of July Sale: 15% off Junk Removal.</span>
@@ -33,172 +50,180 @@
     </div>
 </div>
 
-<!-- Navigation -->
-<nav class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 sticky top-0 z-40 shadow-sm">
-    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-        <div class="flex items-center gap-2">
-            <a href="index.html" style="text-decoration:none; font-size:21px; font-weight:900; color:#1e3066; letter-spacing:0.06em;">JUNK HOGS</a>
-        </div>
-        <div class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600 dark:text-gray-300">
-            <a href="index.html"        class="hover:text-brand-500 transition-colors">Home</a>
-            <a href="services.html"     class="hover:text-brand-500 transition-colors">Services</a>
-            <a href="our-story.html"    class="hover:text-brand-500 transition-colors">Our Story</a>
-            <a href="service-area.html" class="hover:text-brand-500 transition-colors">Service Area</a>
-            <a href="contact.html"      class="text-brand-500 font-semibold transition-colors">Contact</a>
-        </div>
-        <a href="contact.html" class="hidden md:inline-block bg-brand-500 hover:bg-brand-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors shadow-sm">
-            Get Free Quote
-        </a>
-        <button id="menuBtn" class="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors">
-            <i data-lucide="menu" class="w-6 h-6"></i>
-        </button>
+<!-- NAVIGATION -->
+<nav class="bg-navy-900 text-white sticky top-0 z-40">
+  <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="index.html" class="text-xl font-black tracking-wide">JUNK<span class="text-amber-400">HOGS</span></a>
+    <div class="hidden md:flex items-center gap-7 text-sm font-semibold text-white/70">
+      <a href="index.html" class="hover:text-white transition">Home</a>
+      <a href="services.html" class="hover:text-white transition">Services</a>
+      <a href="our-story.html" class="hover:text-white transition">Our Story</a>
+      <a href="service-area.html" class="hover:text-white transition">Service Area</a>
+      <a href="contact.html" class="text-white">Contact</a>
     </div>
-    <div id="mobileMenu" class="hidden md:hidden border-t border-gray-200 bg-white px-4 py-4 space-y-3">
-        <a href="index.html"        onclick="closeMobileMenu()" class="block text-sm font-medium text-gray-700 hover:text-brand-500 py-1">Home</a>
-        <a href="services.html"     onclick="closeMobileMenu()" class="block text-sm font-medium text-gray-700 hover:text-brand-500 py-1">Services</a>
-        <a href="our-story.html"    onclick="closeMobileMenu()" class="block text-sm font-medium text-gray-700 hover:text-brand-500 py-1">Our Story</a>
-        <a href="service-area.html" onclick="closeMobileMenu()" class="block text-sm font-medium text-gray-700 hover:text-brand-500 py-1">Service Area</a>
-        <a href="contact.html"      onclick="closeMobileMenu()" class="block text-sm font-medium text-gray-700 hover:text-brand-500 py-1">Contact</a>
-        <a href="contact.html"      onclick="closeMobileMenu()" class="block w-full text-center bg-brand-500 hover:bg-brand-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors">Get Free Quote</a>
-    </div>
+    <a href="tel:7348650345" class="hidden md:inline-block bg-amber-500 hover:bg-amber-600 text-navy-900 text-sm font-extrabold px-5 py-2.5 rounded-lg transition">📞 (734) 865-0345</a>
+    <button id="menuBtn" class="md:hidden p-2 text-white" aria-label="Menu">
+      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h18M4 13h18M4 19h18"/></svg>
+    </button>
+  </div>
+  <div id="mobileMenu" class="hidden md:hidden bg-navy-600 px-6 py-4 space-y-3">
+    <a href="index.html"        onclick="closeMobileMenu()" class="block text-sm font-semibold text-white/80 hover:text-white py-1">Home</a>
+    <a href="services.html"     onclick="closeMobileMenu()" class="block text-sm font-semibold text-white/80 hover:text-white py-1">Services</a>
+    <a href="our-story.html"    onclick="closeMobileMenu()" class="block text-sm font-semibold text-white/80 hover:text-white py-1">Our Story</a>
+    <a href="service-area.html" onclick="closeMobileMenu()" class="block text-sm font-semibold text-white/80 hover:text-white py-1">Service Area</a>
+    <a href="contact.html"      onclick="closeMobileMenu()" class="block text-sm font-semibold text-white py-1">Contact</a>
+    <a href="tel:7348650345"    onclick="closeMobileMenu()" class="block w-full text-center bg-amber-500 text-navy-900 px-4 py-2.5 rounded-lg text-sm font-extrabold">📞 (734) 865-0345</a>
+  </div>
 </nav>
 
-<!-- Page Header -->
-<section class="bg-brand-600 text-white py-14 px-4 text-center">
-    <h1 class="text-4xl font-bold mb-3">Get Your Free Quote</h1>
-    <p class="text-brand-200 text-lg max-w-xl mx-auto">No obligation. Upfront pricing. We respond within the hour.</p>
+<!-- PAGE HERO -->
+<header class="relative bg-navy-900 text-white overflow-hidden">
+  <img src="job-4-2.jpeg" alt="" class="absolute inset-0 w-full h-full object-cover opacity-20">
+  <div class="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-900/85 to-navy-900/50"></div>
+  <div class="relative max-w-6xl mx-auto px-6 py-16 md:py-24">
+    <p class="text-amber-400 font-extrabold uppercase tracking-wider text-sm mb-3">Free quote</p>
+    <h1 class="text-5xl md:text-7xl font-black leading-[0.95] tracking-tight">GET A FREE<br><span class="text-amber-400">QUOTE</span></h1>
+    <p class="mt-6 text-lg md:text-xl text-white/70 max-w-xl">No obligation. Upfront pricing. We respond within the hour.</p>
+  </div>
+</header>
+
+<!-- CONTACT FORM + PHOTO -->
+<section class="max-w-6xl mx-auto px-6 py-16 md:py-20 grid md:grid-cols-2 gap-12 items-start">
+  <div class="bg-white border-2 border-gray-100 rounded-2xl shadow-lg p-8">
+    <form id="contactForm" class="space-y-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-xs font-bold text-gray-600 mb-1.5 uppercase tracking-wider">Full Name *</label>
+          <input type="text" name="name" placeholder="Jane Doe" required class="w-full border-2 border-gray-100 rounded-xl px-4 py-3 focus:outline-none focus:border-navy-500">
+        </div>
+        <div>
+          <label class="block text-xs font-bold text-gray-600 mb-1.5 uppercase tracking-wider">Phone Number *</label>
+          <input type="tel" name="phone" placeholder="(734) 555-0000" required class="w-full border-2 border-gray-100 rounded-xl px-4 py-3 focus:outline-none focus:border-navy-500">
+        </div>
+      </div>
+      <div>
+        <label class="block text-xs font-bold text-gray-600 mb-1.5 uppercase tracking-wider">Service Address</label>
+        <input type="text" name="address" placeholder="123 Main St, Ann Arbor, MI" class="w-full border-2 border-gray-100 rounded-xl px-4 py-3 focus:outline-none focus:border-navy-500">
+      </div>
+      <div>
+        <label class="block text-xs font-bold text-gray-600 mb-1.5 uppercase tracking-wider">What needs to be removed? *</label>
+        <textarea rows="4" name="description" placeholder="Describe the items or amount of junk. The more detail, the more accurate your quote will be." required class="w-full border-2 border-gray-100 rounded-xl px-4 py-3 focus:outline-none focus:border-navy-500 resize-none"></textarea>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-xs font-bold text-gray-600 mb-1.5 uppercase tracking-wider">Preferred Date</label>
+          <input type="date" name="preferred_date" class="w-full border-2 border-gray-100 rounded-xl px-4 py-3 text-gray-500 focus:outline-none focus:border-navy-500">
+        </div>
+        <div>
+          <label class="block text-xs font-bold text-gray-600 mb-1.5 uppercase tracking-wider">How'd you hear about us?</label>
+          <select name="referral_source" class="w-full border-2 border-gray-100 rounded-xl px-4 py-3 text-gray-700 focus:outline-none focus:border-navy-500">
+            <option>Google Search</option>
+            <option>Referral</option>
+            <option>Nextdoor</option>
+            <option>Facebook</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+      <button type="submit" id="contactSubmitBtn" class="w-full bg-amber-500 hover:bg-amber-600 text-navy-900 py-4 rounded-xl font-extrabold text-lg transition">Submit My Quote Request</button>
+      <p class="text-xs text-center text-gray-400">We respond within 1 hour during business hours (Mon–Sat 7am–7pm)</p>
+    </form>
+  </div>
+  <div class="space-y-6">
+    <img src="job-4-2.jpeg" alt="Junk Hogs crew clearing a property" class="w-full h-80 object-cover rounded-3xl shadow-lg">
+    <div class="bg-navy-900 text-white rounded-2xl p-8">
+      <h3 class="text-2xl font-black mb-4">Prefer to call?</h3>
+      <a href="tel:7348650345" class="text-amber-400 text-3xl font-black hover:text-amber-500 transition">(734) 865-0345</a>
+      <div class="mt-4 space-y-1 text-white/60 text-sm">
+        <div>📧 malachifriedlund@gmail.com</div>
+        <div>🕐 Mon–Sat: 7am – 7pm</div>
+        <div>📍 Ann Arbor &amp; Washtenaw County</div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- Contact Form + Photo -->
-<section class="py-16 px-4">
-    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-start">
-        <div class="bg-white border border-gray-200 rounded-xl shadow-md p-8">
-            <form id="contactForm" class="space-y-4 text-left">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-xs font-semibold text-gray-600 dark:text-gray-400 mb-1">Full Name *</label>
-                        <input type="text" name="name" placeholder="Jane Doe" required class="w-full border border-gray-200 dark:border-gray-600 dark:bg-gray-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 dark:text-white" />
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold text-gray-600 dark:text-gray-400 mb-1">Phone Number *</label>
-                        <input type="tel" name="phone" placeholder="(734) 555-0000" required class="w-full border border-gray-200 dark:border-gray-600 dark:bg-gray-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 dark:text-white" />
-                    </div>
-                </div>
-                <div>
-                    <label class="block text-xs font-semibold text-gray-600 dark:text-gray-400 mb-1">Service Address</label>
-                    <input type="text" name="address" placeholder="123 Main St, Ann Arbor, MI" class="w-full border border-gray-200 dark:border-gray-600 dark:bg-gray-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 dark:text-white" />
-                </div>
-                <div>
-                    <label class="block text-xs font-semibold text-gray-600 dark:text-gray-400 mb-1">What needs to be removed? *</label>
-                    <textarea rows="4" name="description" placeholder="Describe the items or amount of junk. The more detail, the more accurate your quote will be." required class="w-full border border-gray-200 dark:border-gray-600 dark:bg-gray-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 dark:text-white resize-none"></textarea>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-xs font-semibold text-gray-600 dark:text-gray-400 mb-1">Preferred Date</label>
-                        <input type="date" name="preferred_date" class="w-full border border-gray-200 dark:border-gray-600 dark:bg-gray-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 dark:text-white" />
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold text-gray-600 dark:text-gray-400 mb-1">How'd you hear about us?</label>
-                        <select name="referral_source" class="w-full border border-gray-200 dark:border-gray-600 dark:bg-gray-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 dark:text-white">
-                            <option>Google Search</option>
-                            <option>Referral</option>
-                            <option>Nextdoor</option>
-                            <option>Facebook</option>
-                            <option>Other</option>
-                        </select>
-                    </div>
-                </div>
-                <button type="submit" id="contactSubmitBtn" class="w-full bg-brand-500 hover:bg-brand-600 text-white py-3 rounded-lg font-bold text-sm transition-colors shadow-sm">
-                    Submit My Quote Request
-                </button>
-                <p class="text-xs text-center text-gray-400">We respond within 1 hour during business hours (Mon-Sat 7am-7pm)</p>
-            </form>
-        </div>
-        <!-- Photo -->
-        <div class="rounded-xl overflow-hidden shadow-md">
-            <img src="job-4-2.jpeg" alt="Junk Hogs crew clearing a property" class="w-full h-full object-cover" />
-        </div>
+<!-- FOOTER -->
+<footer class="bg-navy-900 text-white/60 py-12">
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+    <div>
+      <div class="text-2xl font-black text-white mb-3">JUNK<span class="text-amber-400">HOGS</span></div>
+      <p class="text-sm">Locally owned and operated junk removal serving Ann Arbor and Washtenaw County.</p>
     </div>
-</section>
-
-<!-- Footer -->
-<footer class="bg-gray-900 dark:bg-gray-950 text-gray-400 py-10 px-4">
-    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
-        <div>
-            <div class="flex items-center gap-2 mb-3">
-                <img src="logo.png" alt="Junk Hogs Logo" class="h-16 w-auto" />
-            </div>
-            <p class="text-sm">Locally owned and operated junk removal serving Ann Arbor and Washtenaw County.</p>
-        </div>
-        <div>
-            <h4 class="text-white font-semibold mb-3 text-sm">Contact</h4>
-            <div class="space-y-1 text-sm">
-                <div>(734) 865-0345</div>
-                <div>malachifriedlund@gmail.com</div>
-                <div>Mon–Sat: 7am – 7pm</div>
-            </div>
-        </div>
-        <div>
-            <h4 class="text-white font-semibold mb-3 text-sm">Quick Links</h4>
-            <div class="space-y-1 text-sm">
-                <div><a href="services.html"     class="hover:text-white transition-colors">Services</a></div>
-                <div><a href="our-story.html"    class="hover:text-white transition-colors">Our Story</a></div>
-                <div><a href="service-area.html" class="hover:text-white transition-colors">Service Area</a></div>
-                <div><a href="contact.html"      class="hover:text-white transition-colors">Get a Quote</a></div>
-            </div>
-        </div>
+    <div>
+      <h4 class="text-white font-bold mb-3 text-sm uppercase tracking-wider">Contact</h4>
+      <div class="space-y-1 text-sm">
+        <div><a href="tel:7348650345" class="hover:text-white transition">(734) 865-0345</a></div>
+        <div>malachifriedlund@gmail.com</div>
+        <div>Mon–Sat: 7am – 7pm</div>
+      </div>
     </div>
-    <div class="max-w-6xl mx-auto mt-8 pt-6 border-t border-gray-800 text-center text-xs">
-        &copy; 2026 Junk Hogs. All rights reserved. Licensed &amp; Insured in Michigan.
+    <div>
+      <h4 class="text-white font-bold mb-3 text-sm uppercase tracking-wider">Quick Links</h4>
+      <div class="space-y-1 text-sm">
+        <div><a href="services.html"     class="hover:text-white transition">Services</a></div>
+        <div><a href="our-story.html"    class="hover:text-white transition">Our Story</a></div>
+        <div><a href="service-area.html" class="hover:text-white transition">Service Area</a></div>
+        <div><a href="contact.html"      class="hover:text-white transition">Get a Quote</a></div>
+      </div>
     </div>
+  </div>
+  <div class="max-w-6xl mx-auto mt-8 pt-6 border-t border-white/10 text-center text-xs px-6">
+    &copy; 2026 Junk Hogs. All rights reserved. Licensed &amp; Insured in Michigan.
+  </div>
 </footer>
 
+<!-- STICKY BOTTOM CTA (mobile only) -->
+<div class="sticky-cta">
+  <a href="#contactForm" class="cta-primary">Get Free Quote</a>
+  <a href="tel:7348650345" class="cta-secondary">📞 Call Now</a>
+</div>
+
 <script>
-    if (typeof lucide !== 'undefined') { lucide.createIcons(); }
+  var menuBtn = document.getElementById('menuBtn');
+  var mobileMenu = document.getElementById('mobileMenu');
+  if (menuBtn) menuBtn.addEventListener('click', function(){ mobileMenu.classList.toggle('hidden'); });
+  function closeMobileMenu(){ mobileMenu.classList.add('hidden'); }
 
-    var menuBtn    = document.getElementById('menuBtn');
-    var mobileMenu = document.getElementById('mobileMenu');
-    menuBtn.addEventListener('click', function() { mobileMenu.classList.toggle('hidden'); });
-    function closeMobileMenu() { mobileMenu.classList.add('hidden'); }
-
-    function sendTelegram(msg) {
-        fetch('https://junk-hogs-telegram.malachifriedlund.workers.dev', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ message: msg })
-        });
-    }
-
-    var form = document.getElementById('contactForm');
-    var btn  = document.getElementById('contactSubmitBtn');
-    var origText = btn.textContent;
-
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        btn.textContent = 'Sending…';
-        btn.disabled = true;
-
-        var data = new FormData(form);
-        var msg = '🐷 <b>New Quote Request — Junk Hogs</b>\n\n'
-            + '👤 <b>Name:</b> '        + (data.get('name')           || '—') + '\n'
-            + '📞 <b>Phone:</b> '        + (data.get('phone')          || '—') + '\n'
-            + '📧 <b>Email:</b> '        + (data.get('email')          || '—') + '\n'
-            + '📍 <b>Address:</b> '      + (data.get('address')        || '—') + '\n'
-            + '🗑 <b>Items:</b> '        + (data.get('description')    || '—') + '\n'
-            + '📅 <b>Date:</b> '         + (data.get('preferred_date') || '—') + '\n'
-            + '📣 <b>Heard via:</b> '    + (data.get('referral_source')|| '—');
-
-        sendTelegram(msg);
-
-        btn.textContent = 'Request Sent!';
-        btn.style.backgroundColor = '#16a34a';
-        form.reset();
-        setTimeout(function() {
-            btn.textContent = origText;
-            btn.style.backgroundColor = '';
-            btn.disabled = false;
-        }, 4000);
+  function sendTelegram(msg) {
+    fetch('https://junk-hogs-telegram.malachifriedlund.workers.dev', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: msg })
     });
+  }
+
+  var form = document.getElementById('contactForm');
+  var btn  = document.getElementById('contactSubmitBtn');
+  var origText = btn.textContent;
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    var data = new FormData(form);
+    var msg = '🐷 <b>New Quote Request — Junk Hogs</b>\n\n'
+      + '👤 <b>Name:</b> '        + (data.get('name')           || '—') + '\n'
+      + '📞 <b>Phone:</b> '        + (data.get('phone')          || '—') + '\n'
+      + '📍 <b>Address:</b> '      + (data.get('address')        || '—') + '\n'
+      + '🗑 <b>Items:</b> '        + (data.get('description')    || '—') + '\n'
+      + '📅 <b>Date:</b> '         + (data.get('preferred_date') || '—') + '\n'
+      + '📣 <b>Heard via:</b> '    + (data.get('referral_source')|| '—');
+
+    sendTelegram(msg);
+
+    btn.textContent = 'Request Sent!';
+    btn.style.backgroundColor = '#16a34a';
+    btn.style.color = 'white';
+    form.reset();
+    setTimeout(function() {
+      btn.textContent = origText;
+      btn.style.backgroundColor = '';
+      btn.style.color = '';
+      btn.disabled = false;
+    }, 4000);
+  });
 </script>
 </body>
 </html>

@@ -11,15 +11,32 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - Junk Hogs</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Services — Junk Hogs</title>
+    <meta name="description" content="Residential & commercial junk removal: furniture, appliances, home cleanouts, yard waste, and same-day service in Ann Arbor & Washtenaw County.">
     <link rel="icon" type="image/png" href="logo.png">
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = { theme: { extend: {
+        colors: { navy: { 50:'#f0f4ff', 500:'#1e3066', 600:'#182857', 900:'#0e1634' }, amber:{400:'#fbbf24',500:'#f59e0b',600:'#d97706'} },
+        fontFamily: { sans: ['Inter','system-ui','sans-serif'] }
+      }}}
+    </script>
+    <style>
+      body{font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;}
+      @keyframes jh-ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+      .sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; z-index: 100; padding: 12px 16px; background: #0e1634; display: flex; gap: 10px; }
+      .sticky-cta a { flex: 1; text-align: center; text-decoration: none; font-weight: 800; font-size: 14px; padding: 14px; border-radius: 10px; }
+      .sticky-cta .cta-primary { background: #f59e0b; color: #0e1634; }
+      .sticky-cta .cta-secondary { border: 2px solid rgba(255,255,255,0.4); color: white; }
+      @media (min-width: 768px) { .sticky-cta { display: none; } }
+      @media (max-width: 767px) { footer { padding-bottom: 96px !important; } }
+    </style>
 </head>
-<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+<body class="bg-white text-gray-900">
 
 <!-- PROMO BANNER -->
-<style>@keyframes jh-ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }</style>
 <div style="background:#dc2626; color:white; padding:9px 0; overflow:hidden; white-space:nowrap; position:relative; z-index:60;">
     <div style="display:inline-flex; animation:jh-ticker 24s linear infinite; will-change:transform;">
         <span style="font-size:14px; font-weight:700; padding:0 52px;">🇺🇸 4th of July Sale: 15% off Junk Removal.</span>
@@ -33,170 +50,153 @@
     </div>
 </div>
 
-<!-- Navigation -->
-<nav class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 sticky top-0 z-40 shadow-sm">
-    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-        <div class="flex items-center gap-2">
-            <a href="index.html" style="text-decoration:none; font-size:21px; font-weight:900; color:#1e3066; letter-spacing:0.06em;">JUNK HOGS</a>
-        </div>
-        <div class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600 dark:text-gray-300">
-            <a href="index.html"        class="hover:text-brand-500 transition-colors">Home</a>
-            <a href="services.html"     class="text-brand-500 font-semibold transition-colors">Services</a>
-            <a href="our-story.html"    class="hover:text-brand-500 transition-colors">Our Story</a>
-            <a href="service-area.html" class="hover:text-brand-500 transition-colors">Service Area</a>
-            <a href="contact.html"      class="hover:text-brand-500 transition-colors">Contact</a>
-        </div>
-        <a href="contact.html" class="hidden md:inline-block bg-brand-500 hover:bg-brand-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors shadow-sm">
-            Get Free Quote
-        </a>
-        <button id="menuBtn" class="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors">
-            <i data-lucide="menu" class="w-6 h-6"></i>
-        </button>
+<!-- NAVIGATION -->
+<nav class="bg-navy-900 text-white sticky top-0 z-40">
+  <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="index.html" class="text-xl font-black tracking-wide">JUNK<span class="text-amber-400">HOGS</span></a>
+    <div class="hidden md:flex items-center gap-7 text-sm font-semibold text-white/70">
+      <a href="index.html" class="hover:text-white transition">Home</a>
+      <a href="services.html" class="text-white">Services</a>
+      <a href="our-story.html" class="hover:text-white transition">Our Story</a>
+      <a href="service-area.html" class="hover:text-white transition">Service Area</a>
+      <a href="contact.html" class="hover:text-white transition">Contact</a>
     </div>
-    <div id="mobileMenu" class="hidden md:hidden border-t border-gray-200 bg-white px-4 py-4 space-y-3">
-        <a href="index.html"        onclick="closeMobileMenu()" class="block text-sm font-medium text-gray-700 hover:text-brand-500 py-1">Home</a>
-        <a href="services.html"     onclick="closeMobileMenu()" class="block text-sm font-medium text-gray-700 hover:text-brand-500 py-1">Services</a>
-        <a href="our-story.html"    onclick="closeMobileMenu()" class="block text-sm font-medium text-gray-700 hover:text-brand-500 py-1">Our Story</a>
-        <a href="service-area.html" onclick="closeMobileMenu()" class="block text-sm font-medium text-gray-700 hover:text-brand-500 py-1">Service Area</a>
-        <a href="contact.html"      onclick="closeMobileMenu()" class="block text-sm font-medium text-gray-700 hover:text-brand-500 py-1">Contact</a>
-        <a href="contact.html"      onclick="closeMobileMenu()" class="block w-full text-center bg-brand-500 hover:bg-brand-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors">Get Free Quote</a>
-    </div>
+    <a href="tel:7348650345" class="hidden md:inline-block bg-amber-500 hover:bg-amber-600 text-navy-900 text-sm font-extrabold px-5 py-2.5 rounded-lg transition">📞 (734) 865-0345</a>
+    <button id="menuBtn" class="md:hidden p-2 text-white" aria-label="Menu">
+      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h18M4 13h18M4 19h18"/></svg>
+    </button>
+  </div>
+  <div id="mobileMenu" class="hidden md:hidden bg-navy-600 px-6 py-4 space-y-3">
+    <a href="index.html"        onclick="closeMobileMenu()" class="block text-sm font-semibold text-white/80 hover:text-white py-1">Home</a>
+    <a href="services.html"     onclick="closeMobileMenu()" class="block text-sm font-semibold text-white py-1">Services</a>
+    <a href="our-story.html"    onclick="closeMobileMenu()" class="block text-sm font-semibold text-white/80 hover:text-white py-1">Our Story</a>
+    <a href="service-area.html" onclick="closeMobileMenu()" class="block text-sm font-semibold text-white/80 hover:text-white py-1">Service Area</a>
+    <a href="contact.html"      onclick="closeMobileMenu()" class="block text-sm font-semibold text-white/80 hover:text-white py-1">Contact</a>
+    <a href="tel:7348650345"    onclick="closeMobileMenu()" class="block w-full text-center bg-amber-500 text-navy-900 px-4 py-2.5 rounded-lg text-sm font-extrabold">📞 (734) 865-0345</a>
+  </div>
 </nav>
 
-<!-- Page Header -->
-<section class="relative text-white px-4 text-center overflow-hidden" style="padding-top:6rem;padding-bottom:6rem;">
-    <div class="absolute inset-0">
-        <img src="job-4-3.jpeg" alt="Junk Hogs crew on the job" class="w-full h-full object-cover" />
+<!-- PAGE HERO -->
+<header class="relative bg-navy-900 text-white overflow-hidden">
+  <img src="job-4-3.jpeg" alt="" class="absolute inset-0 w-full h-full object-cover opacity-20">
+  <div class="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-900/85 to-navy-900/50"></div>
+  <div class="relative max-w-6xl mx-auto px-6 py-20 md:py-28">
+    <p class="text-amber-400 font-extrabold uppercase tracking-wider text-sm mb-3">What we do</p>
+    <h1 class="text-5xl md:text-7xl font-black leading-[0.95] tracking-tight">OUR SERVICES</h1>
+    <p class="mt-6 text-lg md:text-xl text-white/70 max-w-xl">From single-item pickups to full property cleanouts — fast, upfront, and hassle-free.</p>
+  </div>
+</header>
+
+<!-- SERVICES GRID -->
+<section class="max-w-6xl mx-auto px-6 py-20 md:py-24">
+  <div class="grid md:grid-cols-3 gap-5">
+    <div class="bg-white border-2 border-gray-100 rounded-2xl p-8 hover:border-amber-500 transition">
+      <div class="text-4xl mb-4">🏠</div>
+      <h3 class="text-xl font-bold mb-2">Residential Cleanouts</h3>
+      <p class="text-gray-500">Garages, basements, attics, and full home cleanouts. We do all the heavy lifting.</p>
     </div>
-    <div class="absolute inset-0" style="background-color:rgba(30,48,102,0.75);"></div>
-    <div class="relative">
-        <h1 class="text-4xl font-bold mb-3">Our Services</h1>
-        <p class="text-brand-200 text-lg max-w-xl mx-auto">From single item pickups to full property cleanouts, we handle it all — fast, upfront, and hassle-free.</p>
+    <div class="bg-white border-2 border-gray-100 rounded-2xl p-8 hover:border-amber-500 transition">
+      <div class="text-4xl mb-4">🏢</div>
+      <h3 class="text-xl font-bold mb-2">Commercial Removal</h3>
+      <p class="text-gray-500">Office furniture, equipment, and renovation debris removal for businesses of all sizes.</p>
     </div>
+    <div class="bg-white border-2 border-gray-100 rounded-2xl p-8 hover:border-amber-500 transition">
+      <div class="text-4xl mb-4">⚡</div>
+      <h3 class="text-xl font-bold mb-2">Same-Day Service</h3>
+      <p class="text-gray-500">Need it gone today? We offer same-day pickups when you book before noon.</p>
+    </div>
+    <div class="bg-white border-2 border-gray-100 rounded-2xl p-8 hover:border-amber-500 transition">
+      <div class="text-4xl mb-4">🛋️</div>
+      <h3 class="text-xl font-bold mb-2">Furniture Removal</h3>
+      <p class="text-gray-500">Sofas, mattresses, dressers, tables — no item is too big or too awkward.</p>
+    </div>
+    <div class="bg-white border-2 border-gray-100 rounded-2xl p-8 hover:border-amber-500 transition">
+      <div class="text-4xl mb-4">🔌</div>
+      <h3 class="text-xl font-bold mb-2">Appliance Hauling</h3>
+      <p class="text-gray-500">Fridges, washers, dryers, ovens — properly disposed of or recycled responsibly.</p>
+    </div>
+    <div class="bg-white border-2 border-gray-100 rounded-2xl p-8 hover:border-amber-500 transition">
+      <div class="text-4xl mb-4">🌿</div>
+      <h3 class="text-xl font-bold mb-2">Yard Waste</h3>
+      <p class="text-gray-500">Branches, brush, landscaping debris — cleared and hauled away cleanly.</p>
+    </div>
+  </div>
 </section>
 
-<!-- Services Grid -->
-<section class="py-16 px-4">
-    <div class="max-w-6xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:shadow-md transition-shadow">
-                <div class="w-12 h-12 bg-brand-100 dark:bg-brand-900 rounded-lg flex items-center justify-center mb-4">
-                    <i data-lucide="home" class="w-6 h-6 text-brand-600 dark:text-brand-400"></i>
-                </div>
-                <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">Residential Cleanouts</h3>
-                <p class="text-gray-500 dark:text-gray-400 text-sm">Garages, basements, attics, and full home cleanouts. We do all the heavy lifting.</p>
-            </div>
-            <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:shadow-md transition-shadow">
-                <div class="w-12 h-12 bg-brand-100 dark:bg-brand-900 rounded-lg flex items-center justify-center mb-4">
-                    <i data-lucide="building-2" class="w-6 h-6 text-brand-600 dark:text-brand-400"></i>
-                </div>
-                <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">Commercial Removal</h3>
-                <p class="text-gray-500 dark:text-gray-400 text-sm">Office furniture, equipment, and renovation debris removal for businesses of all sizes.</p>
-            </div>
-            <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:shadow-md transition-shadow">
-                <div class="w-12 h-12 bg-brand-100 dark:bg-brand-900 rounded-lg flex items-center justify-center mb-4">
-                    <i data-lucide="zap" class="w-6 h-6 text-brand-600 dark:text-brand-400"></i>
-                </div>
-                <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">Same-Day Service</h3>
-                <p class="text-gray-500 dark:text-gray-400 text-sm">Need it gone today? We offer same-day pickups when you book before noon.</p>
-            </div>
-            <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:shadow-md transition-shadow">
-                <div class="w-12 h-12 bg-brand-100 dark:bg-brand-900 rounded-lg flex items-center justify-center mb-4">
-                    <i data-lucide="sofa" class="w-6 h-6 text-brand-600 dark:text-brand-400"></i>
-                </div>
-                <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">Furniture Removal</h3>
-                <p class="text-gray-500 dark:text-gray-400 text-sm">Sofas, mattresses, dressers, tables — no item is too big or too awkward.</p>
-            </div>
-            <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:shadow-md transition-shadow">
-                <div class="w-12 h-12 bg-brand-100 dark:bg-brand-900 rounded-lg flex items-center justify-center mb-4">
-                    <i data-lucide="refrigerator" class="w-6 h-6 text-brand-600 dark:text-brand-400"></i>
-                </div>
-                <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">Appliance Hauling</h3>
-                <p class="text-gray-500 dark:text-gray-400 text-sm">Fridges, washers, dryers, ovens — properly disposed of or recycled responsibly.</p>
-            </div>
-            <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:shadow-md transition-shadow">
-                <div class="w-12 h-12 bg-brand-100 dark:bg-brand-900 rounded-lg flex items-center justify-center mb-4">
-                    <i data-lucide="trees" class="w-6 h-6 text-brand-600 dark:text-brand-400"></i>
-                </div>
-                <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">Yard Waste</h3>
-                <p class="text-gray-500 dark:text-gray-400 text-sm">Branches, brush, landscaping debris — cleared and hauled away cleanly.</p>
-            </div>
-        </div>
+<!-- HOW IT WORKS -->
+<section class="bg-gray-50 py-20 md:py-24">
+  <div class="max-w-5xl mx-auto px-6">
+    <h2 class="text-4xl md:text-5xl font-black text-center mb-3">How it works</h2>
+    <p class="text-gray-500 text-center mb-16">Three simple steps. No hassle. No hidden fees.</p>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white rounded-2xl p-8 border-t-4 border-amber-500">
+        <div class="text-5xl font-black text-amber-500 mb-4">01</div>
+        <h3 class="text-xl font-bold mb-2">Book online or call</h3>
+        <p class="text-gray-500">Fill out our quick form or call us directly. We'll give you an upfront quote — no surprises.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-8 border-t-4 border-amber-500">
+        <div class="text-5xl font-black text-amber-500 mb-4">02</div>
+        <h3 class="text-xl font-bold mb-2">We show up on time</h3>
+        <p class="text-gray-500">Our crew arrives at your scheduled window, ready to work. You just point and we haul.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-8 border-t-4 border-amber-500">
+        <div class="text-5xl font-black text-amber-500 mb-4">03</div>
+        <h3 class="text-xl font-bold mb-2">Done &amp; dusted</h3>
+        <p class="text-gray-500">We sweep up, take everything with us, and you're left with a clean space. That's it.</p>
+      </div>
     </div>
-</section>
-
-<!-- How It Works -->
-<section class="bg-gray-50 dark:bg-gray-800 py-16 px-4">
-    <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-3">How It Works</h2>
-        <p class="text-gray-500 dark:text-gray-400 mb-12">Three simple steps. No hassle. No hidden fees.</p>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-            <div class="hidden md:block absolute top-8 left-1/4 right-1/4 h-0.5 bg-brand-200 dark:bg-brand-800 z-0"></div>
-            <div class="relative z-10 flex flex-col items-center">
-                <div class="w-16 h-16 bg-brand-500 text-white rounded-full flex items-center justify-center text-xl font-bold shadow-md mb-4">1</div>
-                <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">Book Online or Call</h3>
-                <p class="text-gray-500 dark:text-gray-400 text-sm">Fill out our quick form or call us directly. We'll give you an upfront quote — no surprises.</p>
-            </div>
-            <div class="relative z-10 flex flex-col items-center">
-                <div class="w-16 h-16 bg-brand-500 text-white rounded-full flex items-center justify-center text-xl font-bold shadow-md mb-4">2</div>
-                <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">We Show Up On Time</h3>
-                <p class="text-gray-500 dark:text-gray-400 text-sm">Our crew arrives at your scheduled window, ready to work. You just point and we haul.</p>
-            </div>
-            <div class="relative z-10 flex flex-col items-center">
-                <div class="w-16 h-16 bg-brand-500 text-white rounded-full flex items-center justify-center text-xl font-bold shadow-md mb-4">3</div>
-                <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">Done &amp; Dusted</h3>
-                <p class="text-gray-500 dark:text-gray-400 text-sm">We sweep up, take everything with us, and you're left with a clean space. That's it.</p>
-            </div>
-        </div>
-    </div>
+  </div>
 </section>
 
 <!-- CTA -->
-<section class="py-14 px-4 text-center">
-    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Ready to get started?</h2>
-    <a href="contact.html" class="inline-block bg-brand-500 hover:bg-brand-600 text-white px-8 py-3 rounded-lg font-bold transition-colors shadow-sm">
-        Get Your Free Quote
-    </a>
+<section class="bg-amber-500 py-16 md:py-20">
+  <div class="max-w-3xl mx-auto px-6 text-center">
+    <h2 class="text-3xl md:text-4xl font-black text-navy-900 mb-6">Ready to get started?</h2>
+    <a href="contact.html" class="inline-block bg-navy-900 hover:bg-navy-600 text-white px-9 py-4 rounded-lg font-extrabold text-lg transition">Get Your Free Quote →</a>
+  </div>
 </section>
 
-<!-- Footer -->
-<footer class="bg-gray-900 dark:bg-gray-950 text-gray-400 py-10 px-4">
-    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
-        <div>
-            <div class="flex items-center gap-2 mb-3">
-                <img src="logo.png" alt="Junk Hogs Logo" class="h-16 w-auto" />
-            </div>
-            <p class="text-sm">Locally owned and operated junk removal serving Ann Arbor and Washtenaw County.</p>
-        </div>
-        <div>
-            <h4 class="text-white font-semibold mb-3 text-sm">Contact</h4>
-            <div class="space-y-1 text-sm">
-                <div>(734) 865-0345</div>
-                <div>malachifriedlund@gmail.com</div>
-                <div>Mon–Sat: 7am – 7pm</div>
-            </div>
-        </div>
-        <div>
-            <h4 class="text-white font-semibold mb-3 text-sm">Quick Links</h4>
-            <div class="space-y-1 text-sm">
-                <div><a href="services.html"     class="hover:text-white transition-colors">Services</a></div>
-                <div><a href="our-story.html"    class="hover:text-white transition-colors">Our Story</a></div>
-                <div><a href="service-area.html" class="hover:text-white transition-colors">Service Area</a></div>
-                <div><a href="contact.html"      class="hover:text-white transition-colors">Get a Quote</a></div>
-            </div>
-        </div>
+<!-- FOOTER -->
+<footer class="bg-navy-900 text-white/60 py-12">
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+    <div>
+      <div class="text-2xl font-black text-white mb-3">JUNK<span class="text-amber-400">HOGS</span></div>
+      <p class="text-sm">Locally owned and operated junk removal serving Ann Arbor and Washtenaw County.</p>
     </div>
-    <div class="max-w-6xl mx-auto mt-8 pt-6 border-t border-gray-800 text-center text-xs">
-        &copy; 2026 Junk Hogs. All rights reserved. Licensed &amp; Insured in Michigan.
+    <div>
+      <h4 class="text-white font-bold mb-3 text-sm uppercase tracking-wider">Contact</h4>
+      <div class="space-y-1 text-sm">
+        <div><a href="tel:7348650345" class="hover:text-white transition">(734) 865-0345</a></div>
+        <div>malachifriedlund@gmail.com</div>
+        <div>Mon–Sat: 7am – 7pm</div>
+      </div>
     </div>
+    <div>
+      <h4 class="text-white font-bold mb-3 text-sm uppercase tracking-wider">Quick Links</h4>
+      <div class="space-y-1 text-sm">
+        <div><a href="services.html"     class="hover:text-white transition">Services</a></div>
+        <div><a href="our-story.html"    class="hover:text-white transition">Our Story</a></div>
+        <div><a href="service-area.html" class="hover:text-white transition">Service Area</a></div>
+        <div><a href="contact.html"      class="hover:text-white transition">Get a Quote</a></div>
+      </div>
+    </div>
+  </div>
+  <div class="max-w-6xl mx-auto mt-8 pt-6 border-t border-white/10 text-center text-xs px-6">
+    &copy; 2026 Junk Hogs. All rights reserved. Licensed &amp; Insured in Michigan.
+  </div>
 </footer>
 
+<!-- STICKY BOTTOM CTA (mobile only) -->
+<div class="sticky-cta">
+  <a href="contact.html" class="cta-primary">Get Free Quote</a>
+  <a href="tel:7348650345" class="cta-secondary">📞 Call Now</a>
+</div>
+
 <script>
-    if (typeof lucide !== 'undefined') { lucide.createIcons(); }
-    var menuBtn    = document.getElementById('menuBtn');
-    var mobileMenu = document.getElementById('mobileMenu');
-    menuBtn.addEventListener('click', function() { mobileMenu.classList.toggle('hidden'); });
-    function closeMobileMenu() { mobileMenu.classList.add('hidden'); }
+  var menuBtn = document.getElementById('menuBtn');
+  var mobileMenu = document.getElementById('mobileMenu');
+  if (menuBtn) menuBtn.addEventListener('click', function(){ mobileMenu.classList.toggle('hidden'); });
+  function closeMobileMenu(){ mobileMenu.classList.add('hidden'); }
 </script>
 </body>
 </html>
